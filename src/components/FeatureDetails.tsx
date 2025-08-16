@@ -1,4 +1,9 @@
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
+// Simple arrow component to replace Heroicon
+const ArrowRightIcon = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+)
 
 export default function FeatureDetails() {
   const features = [
@@ -42,7 +47,15 @@ export default function FeatureDetails() {
               className="group bg-gray-50 p-8 rounded-xl hover:bg-blue-50 transition-colors duration-300 cursor-pointer"
             >
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                <h3 
+                  className="font-sans font-normal mb-4"
+                  style={{
+                    fontSize: '22px',
+                    lineHeight: '30px',
+                    color: 'rgb(28, 28, 28)',
+                    fontWeight: 400
+                  }}
+                >
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">

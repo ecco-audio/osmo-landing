@@ -20,7 +20,13 @@ export default function Navigation() {
           <div>
             <a
               href="/dashboard"
-              className="font-mono text-xs font-semibold text-white hover:text-secondary tracking-wider transition-colors uppercase"
+              className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
+              style={{
+                fontSize: '12px',
+                lineHeight: '17px',
+                color: 'rgb(244, 243, 239)',
+                fontWeight: 400
+              }}
             >
               DASHBOARD
             </a>
