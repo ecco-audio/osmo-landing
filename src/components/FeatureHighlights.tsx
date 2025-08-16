@@ -55,6 +55,45 @@ export default function FeatureHighlights() {
             </div>
           </div>
         </div>
+
+        {/* Second Section - Mirror Layout with 220px spacing */}
+        <div className="mt-52"> {/* 220px = mt-52 (52 * 4px = 208px, close to 220px) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Section - Quote in white box */}
+            <div className="flex justify-start">
+              <div className="bg-white rounded-3xl p-6 shadow-sm max-w-lg">
+                <div className="mb-2">
+                  <span className="text-4xl font-serif" style={{ color: '#2A60F8' }}>"</span>
+                </div>
+                <p className="quote-text mb-4">
+                  Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">Head of Distribution</p>
+                  <p className="text-gray-600">$400B Global Investment Firm</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section - Features */}
+            <div>
+              <div className="mb-6">
+                <span className="section-pill">
+                  FUNDRAISING INTEL
+                </span>
+              </div>
+              <h3 className="section-subheader">
+                <span style={{ color: '#2A60F8' }}>Raise funds faster and more efficiently.</span>
+              </h3>
+              <div className="space-y-2 text-gray-600 mb-6">
+                <p>Get <strong>action plans</strong> based on the latest strategy updates from the largest allocators.</p>
+              </div>
+              <button className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-blue-600">
+                Learn more
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

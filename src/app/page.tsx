@@ -14,7 +14,6 @@ export default function Home() {
       <HeroSection />
       <FeatureHighlights />
       <FeaturesSection />
-      <FeatureDetails />
       <BenefitsSection />
       <ContactForm />
       <Footer />
