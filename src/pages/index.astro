@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation';
+import HeroSection from '../components/HeroSection';
+import FeatureHighlights from '../components/FeatureHighlights';
+import FeaturesSection from '../components/FeaturesSection';
+import BenefitsSection from '../components/BenefitsSection';
+import ContactForm from '../components/ContactForm';
+import Footer from '../components/Footer';
+---
+
+<Layout title="Osmosis - Real-time Intelligence Monitoring">
+  <main class="min-h-screen">
+    <Navigation client:load />
+    <HeroSection client:load />
+    <FeatureHighlights client:load />
+    <FeaturesSection client:load />
+    <BenefitsSection client:load />
+    <ContactForm client:load />
+    <Footer client:load />
+  </main>
+</Layout>

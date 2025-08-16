@@ -1,5 +1,3 @@
-import Link from 'next/link'
-
 export default function Footer() {
   return (
     <footer className="bg-gray-100 py-8">
@@ -10,28 +8,28 @@ export default function Footer() {
           </p>
           
           <div className="flex items-center space-x-6">
-            <Link 
+            <a 
               href="https://osmosis.fm/terms"
               className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
             >
               Terms of Use
-            </Link>
-            <Link 
+            </a>
+            <a 
               href="https://osmosis.fm/privacy"
               className="text-gray-600 hover:text-gray-900 text-sm transition-colors"
             >
               Privacy Policy
-            </Link>
+            </a>
           </div>
 
           <div>
-            <Link 
+            <a 
               href="https://deepgram.com/"
               className="inline-flex items-center space-x-2 bg-gray-300 hover:bg-gray-400 text-gray-700 text-sm px-4 py-2 rounded-full transition-colors"
             >
-              <span>Built with</span>
+              <span>Powered by</span>
               <span className="font-semibold">Deepgram</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

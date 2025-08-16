@@ -1,6 +1,3 @@
-import Link from 'next/link'
-import Image from 'next/image'
-
 export default function Navigation() {
   return (
     <header className="bg-primary sticky top-0 z-50">
@@ -8,25 +5,25 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center">
-              <Image
+            <a href="/" className="flex items-center">
+              <img
                 src="/img/Osmosis-logo-400.png"
                 alt="Osmosis"
                 width={140}
                 height={36}
                 className="h-9 w-auto"
               />
-            </Link>
+            </a>
           </div>
 
           {/* Dashboard Link */}
           <div>
-            <Link
+            <a
               href="/dashboard"
               className="font-mono text-xs font-semibold text-white hover:text-secondary tracking-wider transition-colors uppercase"
             >
               DASHBOARD
-            </Link>
+            </a>
           </div>
         </div>
       </div>

@@ -1,6 +1,3 @@
-'use client'
-
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function HeroSection() {
@@ -59,12 +56,12 @@ export default function HeroSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link
+              <a
                 href="https://osmosis.fm/enter"
                 className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-secondary shadow-lg hover:shadow-xl"
               >
                 GET STARTED
-              </Link>
+              </a>
             </motion.div>
           </motion.div>
         </div>
