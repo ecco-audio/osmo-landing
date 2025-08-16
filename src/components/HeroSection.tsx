@@ -61,7 +61,7 @@ export default function HeroSection() {
             >
               <Link
                 href="https://osmosis.fm/enter"
-                className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-lg bg-secondary shadow-lg hover:shadow-xl"
+                className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-secondary shadow-lg hover:shadow-xl"
               >
                 GET STARTED
               </Link>

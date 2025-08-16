@@ -161,6 +161,35 @@
     color: #1D054F;
   }
   
+  /* H3 subheaders */
+  .section-subheader {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 110%;
+    letter-spacing: -0.05em;
+    color: #1D054F;
+    margin-bottom: 40px;
+  }
+  
+  /* Quote text */
+  .quote-text {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    color: rgb(248, 97, 60);
+  }
+  
+  /* Product overview title */
+  .product-title {
+    font-family: var(--font-heading), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 48px;
+    color: rgb(42, 96, 248);
+  }
+  
   /* Section pills/tags */
   .section-pill {
     font-family: var(--font-mono), monospace;

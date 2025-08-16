@@ -1,6 +1,6 @@
 export default function FeatureHighlights() {
   return (
-    <section data-testid="product-overview" className="bg-gray-100 py-16 lg:py-20">
+    <section data-testid="product-overview" className="py-16 lg:py-20" style={{ backgroundColor: '#F4F3EE' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -16,71 +16,43 @@ export default function FeatureHighlights() {
           </p>
         </div>
 
-        {/* 2x2 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Top Left - Features */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
-            <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-semibold rounded-full uppercase tracking-wider">
-                HIDDEN INSIGHTS
-              </span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">
-              Industry leaders shape markets.{' '}
-              <span className="text-gray-500">We'll tell you when their script changes.</span>
-            </h3>
-            <div className="space-y-2 text-gray-600 mb-6">
-              <p><strong>$6T</strong> in AUM tracked, <strong>500K</strong> meetings and interviews, <strong>daily and hourly updates</strong> so you never miss a change</p>
-            </div>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Learn more
-            </button>
-          </div>
-
-          {/* Top Right - Testimonial */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
-            <div className="mb-6">
-              <span className="text-4xl text-blue-600">"</span>
-            </div>
-            <blockquote className="text-lg text-orange-500 font-medium mb-6">
-              I've sourced two $100M+ opportunities from Osmosis in the past month.
-            </blockquote>
+        {/* Single White Container */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left Section - Features */}
             <div>
-              <p className="font-semibold text-gray-900">IR Executive</p>
-              <p className="text-gray-600">$30B Hedge Fund</p>
+              <div className="mb-6">
+                <span className="section-pill">
+                  HIDDEN INSIGHTS
+                </span>
+              </div>
+              <h3 className="section-subheader">
+                <span style={{ color: '#2A60F8' }}>Industry leaders shape markets.</span>{' '}
+                <span className="text-gray-500">We'll tell you when their script changes.</span>
+              </h3>
+              <div className="space-y-2 text-gray-600 mb-6">
+                <p><strong>$6T</strong> in AUM tracked, <strong>500K</strong> meetings and interviews, <strong>daily and hourly updates</strong> so you never miss a change</p>
+              </div>
+              <button className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-blue-600">
+                Learn more
+              </button>
             </div>
-          </div>
 
-          {/* Bottom Left - Testimonial */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
-            <div className="mb-6">
-              <span className="text-4xl text-blue-600">"</span>
-            </div>
-            <blockquote className="text-lg text-orange-500 font-medium mb-6">
-              Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.
-            </blockquote>
+            {/* Right Section - Quote in nested box */}
             <div>
-              <p className="font-semibold text-gray-900">Head of Distribution</p>
-              <p className="text-gray-600">$400B Global Investment Firm</p>
+              <div className="rounded-3xl p-6" style={{ backgroundColor: '#F4F3EE' }}>
+                <div className="mb-2">
+                  <span className="text-4xl font-serif" style={{ color: '#2A60F8' }}>"</span>
+                </div>
+                <p className="quote-text mb-4">
+                  I've sourced two $100M+ opportunities from Osmosis in the past month.
+                </p>
+                <div>
+                  <p className="font-semibold text-gray-900">IR Executive</p>
+                  <p className="text-gray-600">$30B Hedge Fund</p>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Bottom Right - Features */}
-          <div className="bg-white rounded-xl p-8 shadow-sm">
-            <div className="mb-6">
-              <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-xs font-semibold rounded-full uppercase tracking-wider">
-                FUNDRAISING INTEL
-              </span>
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-bold text-blue-600 mb-4">
-              Raise funds faster and more efficiently.
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Get <strong>action plans</strong> based on the latest strategy updates from the largest allocators.
-            </p>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-              Learn more
-            </button>
           </div>
         </div>
       </div>
