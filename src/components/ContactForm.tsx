@@ -26,10 +26,27 @@ export default function ContactForm() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-orange-500 tracking-wider uppercase mb-6">
+          <p 
+            className="font-mono font-semibold tracking-wider uppercase"
+            style={{
+              fontSize: '12px',
+              lineHeight: '20px',
+              color: 'rgb(255, 154, 135)',
+              marginBottom: '24px'
+            }}
+          >
             READY TO STREAMLINE?
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-blue-600 mb-6">
+          <h2 
+            className="font-heading font-normal"
+            style={{
+              fontSize: '64px',
+              lineHeight: '64px',
+              letterSpacing: '-0.02em',
+              color: 'rgb(42, 96, 248)',
+              marginBottom: '32px'
+            }}
+          >
             Start your free trial
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">

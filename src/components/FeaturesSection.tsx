@@ -45,10 +45,26 @@ export default function FeaturesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold text-orange-500 tracking-wider uppercase mb-4">
+          <p 
+            className="font-mono font-semibold tracking-wider uppercase mb-4"
+            style={{
+              fontSize: '12px',
+              lineHeight: '20px',
+              color: 'rgb(255, 154, 135)'
+            }}
+          >
             FEATURES
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-blue-600 mb-6 leading-tight">
+          <h2 
+            className="font-heading font-normal"
+            style={{
+              fontSize: '64px',
+              lineHeight: '64px',
+              letterSpacing: '-0.02em',
+              color: 'rgb(42, 96, 248)',
+              marginBottom: '32px'
+            }}
+          >
             The data you need to know <br />
             <span className="text-gray-500">routed to the right person <br />
             with the right context</span>

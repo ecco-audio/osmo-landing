@@ -37,10 +37,27 @@ export default function BenefitsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-orange-500 tracking-wider uppercase mb-6">
+          <p 
+            className="font-mono font-semibold tracking-wider uppercase"
+            style={{
+              fontSize: '12px',
+              lineHeight: '20px',
+              color: 'rgb(255, 154, 135)',
+              marginBottom: '24px'
+            }}
+          >
             KEY BENEFITS
           </p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-blue-600 leading-tight max-w-4xl mx-auto">
+          <h2 
+            className="font-heading font-normal max-w-4xl mx-auto"
+            style={{
+              fontSize: '64px',
+              lineHeight: '64px',
+              letterSpacing: '-0.02em',
+              color: 'rgb(42, 96, 248)',
+              marginBottom: '32px'
+            }}
+          >
             Move faster and expand your coverage with Osmosis
           </h2>
         </div>
