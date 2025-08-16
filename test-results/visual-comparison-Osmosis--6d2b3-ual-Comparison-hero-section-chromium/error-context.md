@@ -1,0 +1,113 @@
+# Page snapshot
+
+```yaml
+- main:
+  - link "Osmosis":
+    - /url: /
+    - img "Osmosis"
+  - link "DASHBOARD":
+    - /url: /dashboard
+  - heading "The world is speaking. Osmosis listens." [level=1]:
+    - text: The world is speaking.
+    - strong: Osmosis listens.
+  - paragraph: Osmosis tracks public records from pension funds, corporations, governments, and nonprofits. We monitor meetings, earnings, interviews, and key documents, alerting you whenever a narrative shifts.
+  - link "GET STARTED":
+    - /url: https://osmosis.fm/enter
+  - paragraph: Conversations distilled
+  - heading "Real-time Intelligence Monitoring" [level=2]
+  - paragraph: Identify new opportunities, accelerate capital raises and sales, and stay ahead of changing market dynamics – all in one platform
+  - text: HIDDEN INSIGHTS
+  - heading "Industry leaders shape markets. We'll tell you when their script changes." [level=3]
+  - paragraph:
+    - strong: $6T
+    - text: in AUM tracked,
+    - strong: 500K
+    - text: meetings and interviews,
+    - strong: daily and hourly updates
+    - text: so you never miss a change
+  - button "Learn more"
+  - text: "\""
+  - blockquote: I've sourced two $100M+ opportunities from Osmosis in the past month.
+  - paragraph: IR Executive
+  - paragraph: $30B Hedge Fund
+  - text: "\""
+  - blockquote: Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.
+  - paragraph: Head of Distribution
+  - paragraph: $400B Global Investment Firm
+  - text: FUNDRAISING INTEL
+  - heading "Raise funds faster and more efficiently." [level=3]
+  - paragraph:
+    - text: Get
+    - strong: action plans
+    - text: based on the latest strategy updates from the largest allocators.
+  - button "Learn more"
+  - paragraph: FEATURES
+  - heading "The data you need to know routed to the right person with the right context" [level=2]
+  - heading "Monitor Key Entities" [level=3]
+  - paragraph: Osmosis continuously scans meetings, documents and press releases for changes in strategy
+  - button "Learn more →"
+  - heading "Centralize & Summarize" [level=3]
+  - paragraph: We consolidate relevant insights into an easy-to-navigate hub, complete with highlights, summaries, and actionable next steps
+  - button "Learn more →"
+  - heading "Act on Real-Time Signals" [level=3]
+  - paragraph: The moment an entity you follow modifies their strategy, you get an immediate notification on why it matters to you and your team
+  - button "Learn more →"
+  - heading "COMPANIES:" [level=4]
+  - text: AMD Apple Crowdstrike JetBlue
+  - heading "PEOPLE:" [level=4]
+  - text: Mary Barra Jamie Dimon Jensen Huang
+  - heading "TOPICS:" [level=4]
+  - text: FinTech Generative AI Cyber security
+  - paragraph: FEATURES
+  - heading "The data you need to know routed to the right person with the right context" [level=2]
+  - heading "Monitor Key Entities" [level=3]
+  - paragraph: Osmosis continuously scans meetings, documents and press releases for changes in strategy
+  - text: Learn more
+  - heading "Centralize & Summarize" [level=3]
+  - paragraph: We consolidate relevant insights into an easy-to-navigate hub, complete with highlights, summaries, and actionable alerts
+  - text: Learn more
+  - heading "Act on Real-Time Signals" [level=3]
+  - paragraph: The moment an entity you follow modifies their strategy, you get an immediate notification on why it matters to you and your team
+  - text: Learn more
+  - paragraph: KEY BENEFITS
+  - heading "Move faster and expand your coverage with Osmosis" [level=2]
+  - heading "Expand Your Coverage" [level=3]
+  - paragraph:
+    - text: Stay on top of developments across
+    - strong: thousands of orgs
+    - text: without manual tracking. Osmosis captures fleeting data that static databases miss.
+  - heading "Save Time & Resources" [level=3]
+  - paragraph:
+    - text: Eliminate countless hours of research. Redirect efforts to
+    - strong: high-value interactions
+    - text: that bring in more capital.
+  - heading "Empower Sales" [level=3]
+  - paragraph:
+    - text: Deliver
+    - strong: tailored updates
+    - text: to each sales rep, ensuring they have the insights they need to close faster and more confidently.
+  - paragraph: READY TO STREAMLINE?
+  - heading "Start your free trial" [level=2]
+  - paragraph: Fill out this quick form to start a free trial, or feel free to reach out with any other questions.
+  - text: NAME
+  - textbox "NAME"
+  - text: EMAIL
+  - textbox "EMAIL"
+  - text: MESSAGE
+  - textbox "MESSAGE"
+  - button "Submit"
+  - text: $
+  - paragraph: Drive Revenue
+  - text: ⏰
+  - paragraph: Save Time
+  - text: ⚡
+  - paragraph: Move Faster
+  - paragraph: © 2024 Osmosis Technologies Inc
+  - link "Terms of Use":
+    - /url: https://osmosis.fm/terms
+  - link "Privacy Policy":
+    - /url: https://osmosis.fm/privacy
+  - link "Built with Deepgram":
+    - /url: https://deepgram.com/
+- alert
+```

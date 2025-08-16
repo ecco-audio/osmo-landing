@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function Navigation() {
   return (
-    <header className="bg-gray-900 sticky top-0 z-50">
+    <header className="bg-primary sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -12,9 +12,9 @@ export default function Navigation() {
               <Image
                 src="/img/Osmosis-logo-400.png"
                 alt="Osmosis"
-                width={120}
-                height={32}
-                className="h-8 w-auto"
+                width={140}
+                height={36}
+                className="h-9 w-auto"
               />
             </Link>
           </div>
@@ -23,7 +23,7 @@ export default function Navigation() {
           <div>
             <Link
               href="/dashboard"
-              className="text-xs font-semibold text-white hover:text-blue-400 tracking-wider transition-colors"
+              className="font-mono text-xs font-semibold text-white hover:text-secondary tracking-wider transition-colors uppercase"
             >
               DASHBOARD
             </Link>

@@ -113,13 +113,7 @@ export default function FeaturesSection() {
 
           {/* Right Column - Interactive Panel */}
           <motion.div 
-            className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-8 text-white"
-            style={{
-              backgroundImage: `url('/img/osmosis-noise.jpg')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}
+            className="bg-noise bg-cover bg-center rounded-xl p-8 text-white overflow-hidden"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

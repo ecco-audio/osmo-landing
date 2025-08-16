@@ -8,22 +8,13 @@ export default function HeroSection() {
     <section 
       id="hero" 
       data-testid="hero-section"
-      className="relative py-20 lg:py-24 overflow-hidden"
-      style={{
-        backgroundImage: `url('/img/osmosis-noise.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
+      className="relative py-20 lg:py-24 overflow-hidden bg-noise bg-cover bg-center bg-no-repeat"
     >
-      {/* Blue gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/90 via-blue-600/90 to-blue-700/90"></div>
-      
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           {/* Main Headline */}
           <motion.h1 
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight"
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl font-light text-white mb-8 leading-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -42,7 +33,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <strong className="text-white">Osmosis listens.</strong>
+              <strong className="text-white font-normal">Osmosis listens.</strong>
             </motion.span>
           </motion.h1>
 
@@ -70,7 +61,7 @@ export default function HeroSection() {
             >
               <Link
                 href="https://osmosis.fm/enter"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-orange-500 hover:bg-orange-600 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-secondary hover:bg-secondary/90 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 GET STARTED
               </Link>
