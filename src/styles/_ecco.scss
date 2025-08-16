@@ -1,0 +1,35 @@
+// Color Palette
+
+// background and container elements
+$base: #eae7e0;
+$bg: $base;
+$baseaccent: darken($base, 5%);
+$almostblack: #0a0a0a;
+
+// $base: #333;
+// $bg: $base;
+// $baseaccent: lighten($base, 5%);
+
+
+// these four colors are what get used most regularly
+// $primary: #317ab2; // most buttons and such
+// $primaryLight: lighten(#317ab2, 50%);
+// $secondary: #ec6336; // alt color
+// $accent: lighten(#ec6336, 10%); // another alt
+// $accent2:#1A237E;
+// $accentLight: lighten($accent, 15%);
+
+$primary: $almostblack; //#2a60f8;
+$secondary: #f8613c; // alt color
+$accent: #2A60F8;
+//$accent: lighten($secondary, 10%); // another alt
+$primaryLight: lighten($primary, 30%);
+$accentLight: $accent;
+$accent2: $accent;
+
+// FROM FRAMER
+$neutral00: #EAE7E0;
+$neutral01: #F4F3EF;
+
+
+// No :export needed when using as Sass import

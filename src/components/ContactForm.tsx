@@ -1,0 +1,129 @@
+'use client'
+
+import { useState } from 'react'
+
+export default function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('Form submitted:', formData)
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  return (
+    <section data-testid="cta-section" className="bg-gray-100 py-20 lg:py-24">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-orange-500 tracking-wider uppercase mb-6">
+            READY TO STREAMLINE?
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-blue-600 mb-6">
+            Start your free trial
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Fill out this quick form to start a free trial, or<br />
+            feel free to reach out with any other questions.
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <div className="bg-white rounded-xl p-8 shadow-sm mb-16">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                  NAME
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Smith"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                  EMAIL
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@osmosis.fm"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                MESSAGE
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                placeholder="Your message..."
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors resize-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+
+        {/* Benefits */}
+        <div className="flex justify-center items-center space-x-12">
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-lg">$</span>
+            </div>
+            <p className="text-lg font-medium text-orange-500">
+              Drive Revenue
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-lg">⏰</span>
+            </div>
+            <p className="text-lg font-medium text-orange-500">
+              Save Time
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-lg">⚡</span>
+            </div>
+            <p className="text-lg font-medium text-orange-500">
+              Move Faster
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
