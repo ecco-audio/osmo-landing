@@ -120,26 +120,81 @@
     color: #0a0a0a; /* almostBlack from theme */
   }
   
-  /* Typography matching Vue App.vue */
-  h1, h2, h3, h4, h5 {
+  /* Typography system based on Framer specifications */
+  
+  /* Hero headline - Large display text */
+  .hero-headline {
     font-family: var(--font-heading), system-ui, sans-serif;
-    color: #0a0a0a;
+    font-size: 70px;
+    line-height: 70px;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+  }
+  
+  .hero-headline-light {
+    font-weight: 300;
+    color: rgb(234, 231, 224);
+  }
+  
+  .hero-headline-bold {
     font-weight: 600;
+    color: rgb(255, 255, 255);
   }
-  h1, h2 {
-    color: hsl(var(--color-secondary));
-  }
-  h1 {
+  
+  /* Section headers */
+  .section-header {
+    font-family: var(--font-heading), system-ui, sans-serif;
     font-weight: 400;
-    font-size: 3em;
+    font-size: 52px;
+    line-height: 110%;
+    letter-spacing: -0.04em;
+    color: #1D054F;
+    margin-bottom: 40px;
   }
-  h2 {
-    font-weight: 400;
-    font-size: 2em;
+  
+  /* Section header color variants */
+  .section-header-blue {
+    color: rgb(42, 96, 248);
   }
-  h3 {
+  
+  .section-header-dark {
+    color: #1D054F;
+  }
+  
+  /* Section pills/tags */
+  .section-pill {
+    font-family: var(--font-mono), monospace;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(255, 154, 135);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+  
+  /* Body text */
+  .hero-body {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* CTA Button */
+  .cta-button {
+    font-family: var(--font-mono), monospace;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21px;
+    color: rgb(255, 255, 255);
+    transition: all 0.2s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #1D054F !important;
+    color: rgb(255, 255, 255);
   }
   
   h6 {

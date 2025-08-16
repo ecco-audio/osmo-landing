@@ -14,20 +14,13 @@ export default function HeroSection() {
         <div className="text-center">
           {/* Main Headline */}
           <motion.h1 
-            className="font-heading"
-            style={{ 
-              fontSize: '70px', 
-              lineHeight: '70px',
-              letterSpacing: '-0.04em',
-              marginBottom: '40px'
-            }}
+            className="hero-headline"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.span 
-              className="block font-light"
-              style={{ color: 'rgb(234, 231, 224)' }}
+              className="block hero-headline-light"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -35,8 +28,7 @@ export default function HeroSection() {
               The world is speaking.
             </motion.span>
             <motion.span 
-              className="block font-semibold"
-              style={{ color: 'rgb(255, 255, 255)' }}
+              className="block hero-headline-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -47,12 +39,7 @@ export default function HeroSection() {
 
           {/* Subheadline */}
           <motion.p 
-            className="font-sans font-normal mb-12 max-w-4xl mx-auto"
-            style={{ 
-              fontSize: '18px', 
-              lineHeight: '25px', 
-              color: 'rgb(255, 255, 255)' 
-            }}
+            className="hero-body mb-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -74,14 +61,7 @@ export default function HeroSection() {
             >
               <Link
                 href="https://osmosis.fm/enter"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-lg bg-secondary hover:bg-secondary/90 transition-all duration-200 shadow-lg hover:shadow-xl"
-                style={{
-                  fontSize: '12px',
-                  lineHeight: 'normal',
-                  color: 'rgb(0, 0, 0)',
-                  fontWeight: '400',
-                  fontFamily: 'sans-serif'
-                }}
+                className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-lg bg-secondary shadow-lg hover:shadow-xl"
               >
                 GET STARTED
               </Link>

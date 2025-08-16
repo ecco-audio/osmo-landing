@@ -4,26 +4,10 @@ export default function FeatureHighlights() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <p 
-            className="font-mono font-semibold tracking-wider uppercase mb-4"
-            style={{
-              fontSize: '12px',
-              lineHeight: '20px',
-              color: 'rgb(255, 154, 135)'
-            }}
-          >
+          <p className="section-pill">
             Conversations distilled
           </p>
-          <h2 
-            className="font-heading font-normal"
-            style={{
-              fontSize: '64px',
-              lineHeight: '64px',
-              letterSpacing: '-0.02em',
-              color: 'rgb(42, 96, 248)',
-              marginBottom: '32px'
-            }}
-          >
+          <h2 className="section-header section-header-blue">
             Real-time Intelligence Monitoring
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
