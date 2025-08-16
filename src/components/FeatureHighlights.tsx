@@ -89,7 +89,7 @@ export default function FeatureHighlights() {
                 <p><strong>$6T</strong> in AUM tracked, <strong>500K</strong> meetings and interviews, <strong>daily and hourly updates</strong> so you never miss a change</p>
               </motion.div>
               <motion.button 
-                className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-blue-600"
+                className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
@@ -205,7 +205,7 @@ export default function FeatureHighlights() {
                 <p>Get <strong>action plans</strong> based on the latest strategy updates from the largest allocators.</p>
               </motion.div>
               <motion.button 
-                className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-blue-600"
+                className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}

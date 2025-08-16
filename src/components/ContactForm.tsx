@@ -1,4 +1,3 @@
-'use client'
 
 import { useState } from 'react'
 
@@ -106,7 +105,7 @@ export default function ContactForm() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+              className="w-full bg-secondary text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
             >
               Submit
             </button>
