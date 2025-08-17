@@ -1,4 +1,8 @@
+import { useAuth } from '../lib/useAuth'
+
 export default function Navigation() {
+  const { isAuthenticated, user, isLoading } = useAuth()
+
   return (
     <header className="bg-primary sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,20 +20,59 @@ export default function Navigation() {
             </a>
           </div>
 
-          {/* Dashboard Link */}
-          <div>
-            <a
-              href="/dashboard"
-              className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
-              style={{
-                fontSize: '12px',
-                lineHeight: '17px',
-                color: 'rgb(244, 243, 239)',
-                fontWeight: 400
-              }}
-            >
-              DASHBOARD
-            </a>
+          {/* Auth-based Navigation */}
+          <div className="flex items-center space-x-4">
+            
+            {!isLoading && (
+              <>
+                {isAuthenticated ? (
+                  <>
+                    {/* Dashboard Link */}
+                    <a
+                      href="https://osmosis.fm/home"
+                      className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
+                      style={{
+                        fontSize: '12px',
+                        lineHeight: '17px',
+                        color: 'rgb(244, 243, 239)',
+                        fontWeight: 400
+                      }}
+                    >
+                      DASHBOARD
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    {/* Sign In Link */}
+                    <a
+                      href="https://osmosis.fm/enter"
+                      className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
+                      style={{
+                        fontSize: '12px',
+                        lineHeight: '17px',
+                        color: 'rgb(244, 243, 239)',
+                        fontWeight: 400
+                      }}
+                    >
+                      SIGN IN
+                    </a>
+                  </>
+                )}
+              </>
+            )}
+            
+            {/* Loading state */}
+            {isLoading && (
+              <div 
+                className="font-mono text-white/50 uppercase"
+                style={{
+                  fontSize: '12px',
+                  lineHeight: '17px'
+                }}
+              >
+                ...
+              </div>
+            )}
           </div>
         </div>
       </div>
