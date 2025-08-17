@@ -1,61 +1,59 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-// Alert notification component
+// Personalized Mandate Alerts component
 const AlertView = () => (
   <div className="space-y-4">
-    <div className="bg-white rounded-2xl p-6 max-w-md mx-auto shadow-lg">
-      <div className="mb-3">
-        <span className="text-orange-500 text-sm font-medium">Watchlist alert!</span>
-        <div className="text-sm text-gray-600 font-medium">"Peter Hurlsman"</div>
-      </div>
-      <div className="flex items-start space-x-3">
-        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-          <span className="text-white text-sm font-bold">P</span>
-        </div>
-        <div className="flex-1">
-          <div className="text-sm font-medium text-gray-900">Powering Big Tech: Hurlsman Corp. CEO on the burgeoning energy crisis for Silicon Valley</div>
-          <div className="text-xs text-gray-500 mt-1">DBC A6 - Transcript</div>
+    <div className="bg-white rounded-2xl p-6 max-w-lg mx-auto shadow-lg">
+      <div className="mb-4">
+        <div className="text-lg font-semibold text-gray-900 mb-2">Maine PERS</div>
+        <div className="text-sm text-gray-600 font-medium mb-3">
+          <span className="font-semibold text-green-600">Allocation Status:</span> Hedge funds were actively discussed and receiving allocation.
         </div>
       </div>
-      <div className="mt-4 flex items-center space-x-2">
-        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">13:18- 23:04</span>
+      <div className="text-sm text-gray-700 leading-relaxed">
+        MainePERS has strategically increased its private credit allocation from 5% in 2017 to 16.5%. This signals a strong shift towards higher-yielding investment avenues and highlights new partnerships with multi-strategy managers like Surgo Capital and Alyeska Master Fund.
+      </div>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="text-xs text-gray-500">Mandate Alert</span>
+        <span className="bg-orange-500 text-white text-xs px-3 py-1 rounded-full">Active Opportunity</span>
       </div>
     </div>
   </div>
 )
 
-// Questions/Research component
+// Pitch Preparation component
 const QuestionsView = () => (
   <div className="space-y-4">
     <div className="text-center mb-4">
-      <h3 className="text-white text-sm font-medium tracking-wider uppercase">WHAT ARE IBM'S PLANS FOR UPGRADING MAINFRAMES?</h3>
+      <h3 className="text-white text-sm font-medium tracking-wider uppercase">How should I prepare for my CalPERS infrastructure pitch?</h3>
     </div>
-    <div className="bg-white rounded-2xl p-6 max-w-md mx-auto shadow-lg">
+    <div className="bg-white rounded-2xl p-6 max-w-lg mx-auto shadow-lg">
+      <div className="mb-4">
+        <div className="text-sm font-semibold text-gray-900 mb-1">You'll be meeting with Sarah Corr</div>
+        <div className="text-xs text-gray-600 mb-3">
+          Managing Investment Director, Real Assets
+        </div>
+      </div>
       <div className="text-sm text-gray-700 leading-relaxed mb-4">
-        IBM's plans for upgrading mainframes include several key initiatives at AI and IBM Think. Significant announcements are expected regarding the IBM Watson X Assistant set of "Granite" LLMs, which aims to reduce the number of mainframes currently working on multiple future generations of mainframes, including zOS and System z.
+        Over the past year, she has increasingly voiced her opinions about ESG integration in infrastructure investments and has been pushing for more direct infrastructure deals rather than fund-of-funds approaches. She's particularly interested in renewable energy projects and has expressed skepticism about traditional infrastructure valuations.
       </div>
-      <div className="flex items-start space-x-3 mb-4">
-        <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-          <span className="text-white text-sm font-bold">A</span>
+      <div className="border-t pt-3">
+        <div className="text-xs text-gray-500 mb-2">Key talking points:</div>
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ESG Focus</span>
+          <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Direct Deals</span>
+          <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Renewable Energy</span>
         </div>
-        <div className="flex-1">
-          <div className="text-sm font-medium text-gray-900">AI-Assisted and the Mainframe See Five Quarters of IBM Data</div>
-          <div className="text-xs text-gray-500">DBC A6 - Transcript</div>
-        </div>
-      </div>
-      <div className="flex space-x-3">
-        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">00:09- 00:29</span>
-        <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full">31:50- 31:37</span>
       </div>
     </div>
   </div>
 )
 
-// Companies view component (existing)
+// Monitor Key Entities view component
 const CompaniesView = ({ categories }) => (
   <div className="space-y-8">
-    {/* Companies */}
+    {/* Pension Funds */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -63,14 +61,14 @@ const CompaniesView = ({ categories }) => (
       viewport={{ once: true }}
     >
       <h4 className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-4">
-        COMPANIES:
+        PENSION FUNDS:
       </h4>
       <div className="flex flex-wrap gap-2">
-        {categories.companies.map((company, index) => (
+        {categories.pensionFunds.map((fund, index) => (
           <motion.span
             key={index}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-              company === 'JetBlue' 
+              fund === 'SWIB' 
                 ? 'bg-orange-500 text-white' 
                 : 'bg-white/20 text-white hover:bg-white/30'
             }`}
@@ -81,13 +79,13 @@ const CompaniesView = ({ categories }) => (
             transition={{ duration: 0.3, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            {company}
+            {fund}
           </motion.span>
         ))}
       </div>
     </motion.div>
 
-    {/* People */}
+    {/* Consultants */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -95,14 +93,14 @@ const CompaniesView = ({ categories }) => (
       viewport={{ once: true }}
     >
       <h4 className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-4">
-        PEOPLE:
+        CONSULTANTS:
       </h4>
       <div className="flex flex-wrap gap-2">
-        {categories.people.map((person, index) => (
+        {categories.consultants.map((consultant, index) => (
           <motion.span
             key={index}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-              person === 'Jamie Dimon' 
+              consultant === 'Meketa' 
                 ? 'bg-orange-500 text-white' 
                 : 'bg-white/20 text-white hover:bg-white/30'
             }`}
@@ -113,13 +111,13 @@ const CompaniesView = ({ categories }) => (
             transition={{ duration: 0.3, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            {person}
+            {consultant}
           </motion.span>
         ))}
       </div>
     </motion.div>
 
-    {/* Topics */}
+    {/* Investment Strategies */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -127,14 +125,14 @@ const CompaniesView = ({ categories }) => (
       viewport={{ once: true }}
     >
       <h4 className="text-sm font-semibold text-blue-200 uppercase tracking-wider mb-4">
-        TOPICS:
+        STRATEGIES:
       </h4>
       <div className="flex flex-wrap gap-2">
-        {categories.topics.map((topic, index) => (
+        {categories.strategies.map((strategy, index) => (
           <motion.span
             key={index}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors cursor-pointer ${
-              topic === 'FinTech' 
+              strategy === 'Private Credit' 
                 ? 'bg-orange-500 text-white' 
                 : 'bg-white/20 text-white hover:bg-white/30'
             }`}
@@ -145,7 +143,7 @@ const CompaniesView = ({ categories }) => (
             transition={{ duration: 0.3, delay: index * 0.1 }}
             viewport={{ once: true }}
           >
-            {topic}
+            {strategy}
           </motion.span>
         ))}
       </div>
@@ -157,9 +155,9 @@ export default function FeaturesSection() {
   const [activeFeature, setActiveFeature] = useState('monitor')
 
   const categories = {
-    companies: ['AMD', 'Apple', 'Crowdstrike', 'JetBlue'],
-    people: ['Mary Barra', 'Jamie Dimon', 'Jensen Huang'],
-    topics: ['FinTech', 'Generative AI', 'Cyber security']
+    pensionFunds: ['Florida SBA', 'SWIB', 'TRS', 'CalPERS'],
+    consultants: ['Meketa', 'Cambridge Associates', 'NEPC', 'RVK'],
+    strategies: ['Private Credit', 'Private Equity', 'Infrastructure', 'Hedge Funds']
   }
 
   const containerVariants = {
@@ -276,10 +274,10 @@ export default function FeaturesSection() {
                   color: activeFeature === 'centralize' ? 'rgb(42, 96, 248)' : 'rgb(28, 28, 28)',
                   fontWeight: 400
                 }}
-              >Centralize & Summarize</h3>
+              >Personalized Mandate Alerts</h3>
               <p className="text-gray-600 mb-4">
-                We consolidate relevant insights into an easy-to-navigate hub, complete 
-                with highlights, summaries, and actionable next steps
+                Get real-time alerts when allocators discuss new mandates, allocation changes, 
+                or strategic shifts that create opportunities for your fund
               </p>
               <motion.button 
                 className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
@@ -307,8 +305,8 @@ export default function FeaturesSection() {
                 }}
               >Act on Real-Time Signals</h3>
               <p className="text-gray-600 mb-4">
-                The moment an entity you follow modifies their strategy, you get an 
-                immediate notification on why it matters to you and your team
+                Get AI-powered insights about key decision makers before important meetings, 
+                including their recent statements, preferences, and strategic priorities
               </p>
               <motion.button 
                 className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
