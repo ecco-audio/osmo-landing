@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useMessaging } from '../lib/useMessaging'
 
 // Personalized Mandate Alerts component
 const AlertView = () => (
@@ -152,6 +153,8 @@ const CompaniesView = ({ categories }) => (
 )
 
 export default function FeaturesSection() {
+  const messaging = useMessaging()
+  const { features } = messaging
   const [activeFeature, setActiveFeature] = useState('monitor')
 
   const categories = {
@@ -201,7 +204,7 @@ export default function FeaturesSection() {
               color: 'rgb(255, 154, 135)'
             }}
           >
-            FEATURES
+            {features.sectionTitle}
           </p>
           <h2 
             className="font-heading font-normal"
@@ -213,9 +216,13 @@ export default function FeaturesSection() {
               marginBottom: '32px'
             }}
           >
-            The data you need to know <br />
-            <span className="text-gray-500">routed to the right person <br />
-            with the right context</span>
+            {features.headline}
+            {features.subheadline && (
+              <>
+                <br />
+                <span className="text-gray-500">{features.subheadline}</span>
+              </>
+            )}
           </h2>
         </motion.div>
 
@@ -229,92 +236,41 @@ export default function FeaturesSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {/* Monitor Key Entities */}
-            <motion.div 
-              variants={itemVariants}
-              className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                activeFeature === 'monitor' ? 'bg-blue-50 border-l-4 border-blue-600' : 'hover:bg-gray-50'
-              }`}
-              onClick={() => setActiveFeature('monitor')}
-            >
-              <h3 
-                className="font-sans font-normal mb-4"
-                style={{
-                  fontSize: '22px',
-                  lineHeight: '30px',
-                  color: activeFeature === 'monitor' ? 'rgb(42, 96, 248)' : 'rgb(28, 28, 28)',
-                  fontWeight: 400
-                }}
-              >Monitor Key Entities</h3>
-              <p className="text-gray-600 mb-4">
-                Osmosis continuously scans meetings, documents and press releases for 
-                changes in strategy
-              </p>
-              <motion.button 
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
-                whileHover={{ x: 5 }}
-              >
-                Learn more →
-              </motion.button>
-            </motion.div>
-
-            {/* Centralize & Summarize */}
-            <motion.div 
-              variants={itemVariants}
-              className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                activeFeature === 'centralize' ? 'bg-blue-50 border-l-4 border-blue-600' : 'hover:bg-gray-50'
-              }`}
-              onClick={() => setActiveFeature('centralize')}
-            >
-              <h3 
-                className="font-sans font-normal mb-4"
-                style={{
-                  fontSize: '22px',
-                  lineHeight: '30px',
-                  color: activeFeature === 'centralize' ? 'rgb(42, 96, 248)' : 'rgb(28, 28, 28)',
-                  fontWeight: 400
-                }}
-              >Personalized Mandate Alerts</h3>
-              <p className="text-gray-600 mb-4">
-                Get real-time alerts when allocators discuss new mandates, allocation changes, 
-                or strategic shifts that create opportunities for your fund
-              </p>
-              <motion.button 
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
-                whileHover={{ x: 5 }}
-              >
-                Learn more →
-              </motion.button>
-            </motion.div>
-
-            {/* Act on Real-Time Signals */}
-            <motion.div 
-              variants={itemVariants}
-              className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
-                activeFeature === 'signals' ? 'bg-blue-50 border-l-4 border-blue-600' : 'hover:bg-gray-50'
-              }`}
-              onClick={() => setActiveFeature('signals')}
-            >
-              <h3 
-                className="font-sans font-normal mb-4"
-                style={{
-                  fontSize: '22px',
-                  lineHeight: '30px',
-                  color: activeFeature === 'signals' ? 'rgb(42, 96, 248)' : 'rgb(28, 28, 28)',
-                  fontWeight: 400
-                }}
-              >Act on Real-Time Signals</h3>
-              <p className="text-gray-600 mb-4">
-                Get AI-powered insights about key decision makers before important meetings, 
-                including their recent statements, preferences, and strategic priorities
-              </p>
-              <motion.button 
-                className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
-                whileHover={{ x: 5 }}
-              >
-                Learn more →
-              </motion.button>
-            </motion.div>
+            {/* Dynamic Feature Items */}
+            {features.items.map((item, index) => {
+              const featureKeys = ['monitor', 'centralize', 'signals']
+              const featureKey = featureKeys[index]
+              
+              return (
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
+                  className={`p-4 rounded-lg cursor-pointer transition-all duration-300 ${
+                    activeFeature === featureKey ? 'bg-blue-50 border-l-4 border-blue-600' : 'hover:bg-gray-50'
+                  }`}
+                  onClick={() => setActiveFeature(featureKey)}
+                >
+                  <h3 
+                    className="font-sans font-normal mb-4"
+                    style={{
+                      fontSize: '22px',
+                      lineHeight: '30px',
+                      color: activeFeature === featureKey ? 'rgb(42, 96, 248)' : 'rgb(28, 28, 28)',
+                      fontWeight: 400
+                    }}
+                  >{item.title}</h3>
+                  <p className="text-gray-600 mb-4">
+                    {item.description}
+                  </p>
+                  <motion.button 
+                    className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                    whileHover={{ x: 5 }}
+                  >
+                    Learn more →
+                  </motion.button>
+                </motion.div>
+              )
+            })}
           </motion.div>
 
           {/* Right Column - Interactive Panel */}

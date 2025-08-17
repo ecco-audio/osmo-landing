@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion'
+import { useMessaging } from '../lib/useMessaging'
 
 export default function HeroSection() {
+  const messaging = useMessaging()
+  const { hero } = messaging
+
   return (
     <section 
       id="hero" 
@@ -9,6 +13,23 @@ export default function HeroSection() {
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
+          {/* Pre-headline */}
+          {hero.preHeadline && (
+            <motion.p 
+              className="font-mono font-semibold tracking-wider uppercase mb-4"
+              style={{
+                fontSize: '12px',
+                lineHeight: '20px',
+                color: 'rgb(255, 154, 135)'
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              {hero.preHeadline}
+            </motion.p>
+          )}
+
           {/* Main Headline */}
           <motion.h1 
             className="hero-headline"
@@ -17,37 +38,38 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.span 
-              className="block hero-headline-light"
+              className="block hero-headline-bold"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              The world is speaking.
+              {hero.headline.line1}
             </motion.span>
-            <motion.span 
-              className="block hero-headline-bold"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            >
-              Osmosis listens.
-            </motion.span>
+            {hero.headline.line2 && (
+              <motion.span 
+                className="block hero-headline-light"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              >
+                {hero.headline.line2}
+              </motion.span>
+            )}
           </motion.h1>
 
           {/* Subheadline */}
           <motion.p 
-            className="hero-body mb-12 max-w-4xl mx-auto"
+            className="hero-body mb-8 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
-            Osmosis tracks public records from pension funds, corporations, governments, and nonprofits. 
-            We monitor meetings, earnings, interviews, and key documents, alerting you whenever a narrative shifts.
+            {hero.subheadline}
           </motion.p>
 
-          {/* CTA Button */}
+          {/* CTAs */}
           <motion.div 
-            className="flex justify-center"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -57,13 +79,66 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
             >
               <a
-                href="https://osmosis.fm/enter"
+                href={hero.cta.primaryUrl}
                 className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-secondary shadow-lg hover:shadow-xl"
               >
-                GET STARTED
+                {hero.cta.primary}
               </a>
             </motion.div>
+            
+            {hero.cta.secondary && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href={hero.cta.secondaryUrl}
+                  className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-white/20 text-white hover:bg-white/10 transition-colors"
+                >
+                  {hero.cta.secondary}
+                </a>
+              </motion.div>
+            )}
           </motion.div>
+
+          {/* Proof Metrics */}
+          {hero.proofMetrics && (
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+            >
+              {hero.proofMetrics.map((metric, index) => (
+                <motion.div 
+                  key={index}
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 + (index * 0.1), ease: "easeOut" }}
+                >
+                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
+                    {metric.value}
+                  </div>
+                  <div className="text-sm text-white/70 font-medium">
+                    {metric.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+
+          {/* Brand Line (demoted) */}
+          {hero.brandLine && (
+            <motion.p 
+              className="text-white/60 text-sm italic"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+            >
+              {hero.brandLine}
+            </motion.p>
+          )}
         </div>
       </div>
     </section>

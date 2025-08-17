@@ -1,0 +1,130 @@
+{
+  "variants": {
+    "current": {
+      "hero": {
+        "preHeadline": "",
+        "headline": {
+          "line1": "The world is speaking.",
+          "line2": "Osmosis listens."
+        },
+        "subheadline": "Osmosis tracks public records from pension funds, corporations, governments, and nonprofits. We monitor meetings, earnings, interviews, and key documents, alerting you whenever a narrative shifts.",
+        "cta": {
+          "primary": "GET STARTED",
+          "primaryUrl": "https://osmosis.fm/enter"
+        }
+      },
+      "features": {
+        "sectionTitle": "FEATURES",
+        "headline": "The data you need to know",
+        "subheadline": "routed to the right person with the right context",
+        "items": [
+          {
+            "title": "Monitor Key Entities",
+            "description": "Osmosis continuously scans meetings, documents and press releases for changes in strategy"
+          },
+          {
+            "title": "Centralize & Summarize", 
+            "description": "We consolidate relevant insights into an easy-to-navigate hub, complete with highlights, summaries, and actionable next steps"
+          },
+          {
+            "title": "Act on Real-Time Signals",
+            "description": "The moment an entity you follow modifies their strategy, you get an immediate notification on why it matters to you and your team"
+          }
+        ]
+      },
+      "contact": {
+        "sectionTitle": "READY TO STREAMLINE?",
+        "headline": "Start your free trial",
+        "subheadline": "Fill out this quick form to start a free trial, or feel free to reach out with any other questions."
+      }
+    },
+    "mandate_winning": {
+      "hero": {
+        "preHeadline": "Allocator Intelligence",
+        "headline": {
+          "line1": "Intelligence that wins mandates",
+          "line2": ""
+        },
+        "subheadline": "Osmosis turns public allocator meetings and documents into a real-time opportunity feed—so IR and distribution teams know who's buying, what they want, and when to act.",
+        "brandLine": "The world is speaking. Osmosis listens.",
+        "cta": {
+          "primary": "View live opportunities",
+          "primaryUrl": "https://solutions.osmosis.fm",
+          "secondary": "See how it works",
+          "secondaryUrl": "#features"
+        },
+        "proofMetrics": [
+          {
+            "value": "4,000+",
+            "label": "active allocator meetings this quarter"
+          },
+          {
+            "value": "360",
+            "label": "public plans tracked"
+          },
+          {
+            "value": "160",
+            "label": "new opportunities / month"
+          },
+          {
+            "value": "20%",
+            "label": "presentation hit rate"
+          }
+        ]
+      },
+      "features": {
+        "sectionTitle": "WHAT YOU CAN DO WITH OSMOSIS",
+        "headline": "Turn allocator signals into pipeline",
+        "subheadline": "",
+        "items": [
+          {
+            "title": "Be first to the meeting",
+            "description": "Alerts when a plan's priorities shift or a new sleeve opens. Guidance on who to contact and why now."
+          },
+          {
+            "title": "Personalized Mandate Alerts",
+            "description": "Get real-time alerts when allocators discuss new mandates, allocation changes, or strategic shifts that create opportunities for your fund."
+          },
+          {
+            "title": "Spend time where it matters",
+            "description": "Thousands of meetings distilled into clear asks, timing, and constraints. Route insights to the right person on your team."
+          }
+        ]
+      },
+      "contact": {
+        "sectionTitle": "YOUR NEXT MANDATE IS ALREADY IN MOTION",
+        "headline": "See where allocators are leaning today",
+        "subheadline": "We'll tailor your watchlist in a 15-minute call.",
+        "formHeader": "Get access to live allocator activity",
+        "helperText": "No spam. We'll confirm coverage for your strategy and set up a live feed."
+      }
+    }
+  },
+  "testimonials": [
+    {
+      "quote": "I've sourced two $100M+ opportunities from Osmosis in the past month.",
+      "attribution": "IR Executive, $30B Hedge Fund"
+    },
+    {
+      "quote": "Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.",
+      "attribution": "Head of Distribution, $400B Global Investment Firm"
+    }
+  ],
+  "socialProof": {
+    "text": "Trusted by leading hedge funds, credit managers, and consulting firms."
+  },
+  "navigation": {
+    "cta": "View live opportunities",
+    "ctaUrl": "https://solutions.osmosis.fm"
+  },
+  "footer": {
+    "cta": {
+      "headline": "Your next mandate is already in motion",
+      "subheadline": "See where allocators are leaning today—and act first.",
+      "primary": "View live opportunities",
+      "primaryUrl": "https://solutions.osmosis.fm",
+      "secondary": "Book a 15-minute demo",
+      "secondaryUrl": "#contact"
+    }
+  }
+}

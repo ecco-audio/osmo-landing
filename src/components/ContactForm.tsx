@@ -1,7 +1,10 @@
 
 import { useState } from 'react'
+import { useMessaging } from '../lib/useMessaging'
 
 export default function ContactForm() {
+  const messaging = useMessaging()
+  const { contact } = messaging
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -34,7 +37,7 @@ export default function ContactForm() {
               marginBottom: '24px'
             }}
           >
-            READY TO STREAMLINE?
+            {contact.sectionTitle}
           </p>
           <h2 
             className="font-heading font-normal"
@@ -46,16 +49,27 @@ export default function ContactForm() {
               marginBottom: '32px'
             }}
           >
-            Start your free trial
+            {contact.headline}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Fill out this quick form to start a free trial, or<br />
-            feel free to reach out with any other questions.
+            {contact.subheadline}
           </p>
         </div>
 
         {/* Contact Form */}
         <div className="bg-white rounded-xl p-8 shadow-sm mb-16">
+          {contact.formHeader && (
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                {contact.formHeader}
+              </h3>
+              {contact.helperText && (
+                <p className="text-sm text-gray-600">
+                  {contact.helperText}
+                </p>
+              )}
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
