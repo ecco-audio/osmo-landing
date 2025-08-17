@@ -1,5 +1,53 @@
 # Osmosis Messaging Strategy & Implementation Plan
 
+## 📋 Project To-Dos
+
+### 🚨 0. Critical: SEO/Security - Prevent Pricing Exposure
+**Status:** URGENT
+- Check robots.txt to exclude sensitive pages/sections
+- Ensure pricing proposals and sensitive content are not indexed
+- Add noindex meta tags where appropriate
+- Review all public-facing content for accidental data exposure
+
+### 🎨 1. Add Favicon
+**Status:** Pending
+- Add favicon.ico to public directory
+- Include various sizes for different devices
+- Update HTML head with favicon links
+
+### 🔗 2. Solutions Page Integration
+**Status:** In Progress
+- **Option A:** Direct Links - Simple `href="https://solutions.osmosis.fm"` links
+- **Option B:** Integrated Experience - Pass user data via URL params, maintain session continuity
+- **Option C:** Embedded Components - Iframe or API integration for seamless UX
+
+**Key Decisions Needed:**
+- Pass user context to solutions page?
+- Track conversion from landing → solutions?
+- Maintain consistent styling/branding across both pages?
+
+### 📊 3. PostHog Analytics Integration
+**Status:** Pending
+- Set up PostHog tracking across landing page
+- Implement conversion funnel tracking (landing → solutions → signup)
+- Add event tracking for key user interactions (CTA clicks, form submissions, etc.)
+- Configure A/B testing for messaging variants
+
+### ✍️ 4. Copy Cleanup & Refinement
+**Status:** Partially Complete
+- ✅ Implement centralized messaging system with JSON
+- ⏳ Final copy review and polish based on messaging strategy
+- ⏳ Update remaining sections (testimonials, social proof, etc.)
+- ⏳ Implement "Who it's for" section by role
+
+### 🎨 5. Solutions Page Visual Alignment
+**Status:** Out of Scope (Future Phase)
+- Align solutions.osmosis.fm look and feel with landing page
+- Ensure consistent typography, colors, and component styling
+- Unified design system across both properties
+
+---
+
 ## 🎯 Strategic Overview
 
 Love the direction. Your Solutions page nails the ROI story; the Landing page has strong brand voice but hides the money. Below is a practical plan to keep the poetry and surface the payoff—plus drop‑in copy you can paste today.

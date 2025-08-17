@@ -1,0 +1,7 @@
+# Osmosis Landing Page Robots Configuration
+
+User-agent: *
+Allow: /
+
+# Sitemap location (when available)
+# Sitemap: https://osmosis.fm/sitemap.xml
