@@ -16,12 +16,7 @@ export default function HeroSection() {
           {/* Pre-headline */}
           {hero.preHeadline && (
             <motion.p 
-              className="font-mono font-semibold tracking-wider uppercase mb-4"
-              style={{
-                fontSize: '12px',
-                lineHeight: '20px',
-                color: 'rgb(255, 154, 135)'
-              }}
+              className="section-pill"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
@@ -104,7 +99,7 @@ export default function HeroSection() {
           {/* Proof Metrics */}
           {hero.proofMetrics && (
             <motion.div 
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
@@ -128,10 +123,15 @@ export default function HeroSection() {
             </motion.div>
           )}
 
-          {/* Brand Line (demoted) */}
+          {/* Brand Line (demoted but elegant) */}
           {hero.brandLine && (
             <motion.p 
-              className="text-white/60 text-sm italic"
+              className="text-white/70 font-light tracking-wide"
+              style={{
+                fontSize: '18px',
+                lineHeight: '28px',
+                fontStyle: 'italic'
+              }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}

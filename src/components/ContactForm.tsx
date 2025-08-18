@@ -28,15 +28,7 @@ export default function ContactForm() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p 
-            className="font-mono font-semibold tracking-wider uppercase"
-            style={{
-              fontSize: '12px',
-              lineHeight: '20px',
-              color: 'rgb(255, 154, 135)',
-              marginBottom: '24px'
-            }}
-          >
+          <p className="section-pill">
             {contact.sectionTitle}
           </p>
           <h2 

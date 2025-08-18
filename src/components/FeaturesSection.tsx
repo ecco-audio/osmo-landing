@@ -196,14 +196,7 @@ export default function FeaturesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <p 
-            className="font-mono font-semibold tracking-wider uppercase mb-4"
-            style={{
-              fontSize: '12px',
-              lineHeight: '20px',
-              color: 'rgb(255, 154, 135)'
-            }}
-          >
+          <p className="section-pill">
             {features.sectionTitle}
           </p>
           <h2 

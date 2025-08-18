@@ -46,7 +46,6 @@
           "line2": ""
         },
         "subheadline": "Osmosis turns public allocator meetings and documents into a real-time opportunity feed—so IR and distribution teams know who's buying, what they want, and when to act.",
-        "brandLine": "The world is speaking. Osmosis listens.",
         "cta": {
           "primary": "View live opportunities",
           "primaryUrl": "https://solutions.osmosis.fm",
@@ -56,19 +55,15 @@
         "proofMetrics": [
           {
             "value": "4,000+",
-            "label": "active allocator meetings this quarter"
+            "label": "allocator events identified"
           },
           {
             "value": "360",
             "label": "public plans tracked"
           },
           {
-            "value": "160",
-            "label": "new opportunities / month"
-          },
-          {
-            "value": "20%",
-            "label": "presentation hit rate"
+            "value": "100+",
+            "label": "live events per month"
           }
         ]
       },

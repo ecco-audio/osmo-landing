@@ -28,7 +28,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Real-time Intelligence Monitoring
+            The world is speaking. Osmosis listens.
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
