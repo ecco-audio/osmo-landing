@@ -74,7 +74,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       style={{
-        padding: '60px 0',
+        padding: '80px 0',
         background: 'linear-gradient(135deg, #0C1224 0%, #0B1328 50%, #0A1834 100%)',
         position: 'relative',
         overflow: 'hidden'
@@ -89,7 +89,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
       }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-10">
+        <div className="text-center mb-16">
           <motion.p 
             className="section-pill mb-4"
             initial={{ opacity: 0, y: 15 }}
@@ -100,7 +100,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
             {pill}
           </motion.p>
           <motion.h2 
-            className="text-5xl font-light text-white text-center"
+            className="text-6xl font-light text-white text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -112,9 +112,9 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
         </div>
 
         {/* Simplified visual pipeline rail */}
-        <div className="relative h-12 mb-10" aria-hidden="true">
+        <div className="relative h-16 mb-16" aria-hidden="true">
           <svg 
-            viewBox="0 0 1200 32" 
+            viewBox="0 0 1200 40" 
             className="absolute inset-0 w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -127,16 +127,16 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
             </defs>
             {/* Subtle base line */}
             <path 
-              d="M 100 16 L 1100 16" 
+              d="M 100 20 L 1100 20" 
               stroke="rgba(255, 154, 135, 0.2)" 
-              strokeWidth="1" 
+              strokeWidth="2" 
               fill="none"
             />
             {/* Animated progress line */}
             <motion.path 
-              d="M 100 16 L 1100 16" 
+              d="M 100 20 L 1100 20" 
               stroke="url(#pipelineGrad)" 
-              strokeWidth="2" 
+              strokeWidth="3" 
               fill="none"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: 1 }}
@@ -147,11 +147,11 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
               <motion.circle 
                 key={i}
                 cx={100 + (i * 250)} 
-                cy="16" 
-                r={activeStep === i ? "5" : "3"}
+                cy="20" 
+                r={activeStep === i ? "8" : "5"}
                 fill={activeStep === i ? "#FF9A87" : "rgba(255, 154, 135, 0.4)"}
                 animate={{
-                  scale: activeStep === i ? [1, 1.3, 1] : 1,
+                  scale: activeStep === i ? [1, 1.5, 1] : 1,
                   opacity: activeStep === i ? 1 : 0.5
                 }}
                 transition={{ duration: 0.5 }}
@@ -161,7 +161,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
         </div>
 
         {/* Ghost cards - minimal, emphasis on labels */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={step.label}
@@ -175,7 +175,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
                 scale: activeStep === index ? 1.02 : 1
               }}
               style={{
-                padding: '20px 10px',
+                padding: '30px 15px',
                 position: 'relative',
                 transition: 'all 0.3s ease'
               }}
@@ -185,8 +185,8 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
                 <motion.div 
                   style={{
                     position: 'absolute',
-                    inset: '-10px',
-                    background: 'radial-gradient(circle, rgba(255, 154, 135, 0.15) 0%, transparent 70%)',
+                    inset: '-20px',
+                    background: 'radial-gradient(circle, rgba(255, 154, 135, 0.2) 0%, transparent 70%)',
                     borderRadius: '12px',
                     pointerEvents: 'none'
                   }}
@@ -200,14 +200,14 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
                 {/* Icon - smaller, subtle */}
                 <motion.div 
                   style={{
-                    width: '32px',
-                    height: '32px',
-                    margin: '0 auto 12px',
+                    width: '48px',
+                    height: '48px',
+                    margin: '0 auto 16px',
                     color: activeStep === index ? '#FF9A87' : 'rgba(255, 154, 135, 0.5)',
                     transition: 'color 0.3s ease'
                   }}
                   animate={{
-                    y: activeStep === index ? [0, -3, 0] : 0
+                    y: activeStep === index ? [0, -5, 0] : 0
                   }}
                   transition={{ duration: 0.5 }}
                 >
@@ -216,10 +216,10 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
 
                 {/* Label - THE HERO */}
                 <h3 style={{
-                  fontSize: '24px',
+                  fontSize: '32px',
                   fontWeight: 600,
-                  color: activeStep === index ? '#FFFFFF' : 'rgba(255, 255, 255, 0.85)',
-                  marginBottom: '8px',
+                  color: activeStep === index ? '#FFFFFF' : 'rgba(255, 255, 255, 0.9)',
+                  marginBottom: '12px',
                   fontFamily: 'var(--font-heading)',
                   letterSpacing: '-0.02em',
                   transition: 'color 0.3s ease'
@@ -229,10 +229,10 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
 
                 {/* Description - supporting caption */}
                 <p style={{
-                  fontSize: '14px',
-                  lineHeight: '1.4',
-                  color: 'rgba(255, 255, 255, 0.5)',
-                  maxWidth: '180px',
+                  fontSize: '16px',
+                  lineHeight: '1.5',
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  maxWidth: '220px',
                   margin: '0 auto'
                 }}>
                   {step.description}

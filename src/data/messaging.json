@@ -104,28 +104,28 @@
           "headline": "The world is speaking. Osmosis listens.",
           "steps": [
             {
-              "label": "Hear",
-              "description": "Capture allocator conversations.",
+              "label": "Listen",
+              "description": "Capture conversations as they happen.",
               "icon": "mic"
             },
             {
               "label": "Detect",
-              "description": "Identify signals.",
+              "description": "Spot fresh signals in hours.",
               "icon": "sparkle"
             },
             {
               "label": "Attribute",
-              "description": "Every quote tied to speaker.",
+              "description": "Trace every quote to a speaker.",
               "icon": "link"
             },
             {
               "label": "Map",
-              "description": "Reveal who influences decisions.",
+              "description": "Reveal hidden influence networks.",
               "icon": "network"
             },
             {
               "label": "Act",
-              "description": "Send personalized alerts.",
+              "description": "Trigger alerts.",
               "icon": "bolt"
             }
           ],
