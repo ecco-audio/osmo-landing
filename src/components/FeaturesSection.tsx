@@ -259,6 +259,18 @@ export default function FeaturesSection() {
                     href="https://solutions.osmosis.fm"
                     className="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-block"
                     whileHover={{ x: 5 }}
+                    onClick={() => {
+                      // Track Learn more click
+                      if (typeof window !== 'undefined' && (window as any).posthog) {
+                        (window as any).posthog.capture('cta_clicked', {
+                          cta_text: 'Learn more',
+                          cta_location: 'features',
+                          feature_title: item.title,
+                          destination_url: 'https://solutions.osmosis.fm',
+                          source_url: window.location.href
+                        })
+                      }
+                    }}
                   >
                     Learn more →
                   </motion.a>

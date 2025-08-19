@@ -32,6 +32,16 @@ export default function Navigation() {
                 color: 'rgb(244, 243, 239)',
                 fontWeight: 400
               }}
+              onClick={() => {
+                // Track navigation click
+                if (typeof window !== 'undefined' && (window as any).posthog) {
+                  (window as any).posthog.capture('nav_clicked', {
+                    nav_item: 'solutions',
+                    destination_url: 'https://solutions.osmosis.fm',
+                    is_authenticated: isAuthenticated
+                  })
+                }
+              }}
             >
               SOLUTIONS
             </a>
@@ -50,6 +60,16 @@ export default function Navigation() {
                         color: 'rgb(244, 243, 239)',
                         fontWeight: 400
                       }}
+                      onClick={() => {
+                        // Track dashboard click
+                        if (typeof window !== 'undefined' && (window as any).posthog) {
+                          (window as any).posthog.capture('nav_clicked', {
+                            nav_item: 'dashboard',
+                            destination_url: 'https://osmosis.fm/home',
+                            is_authenticated: true
+                          })
+                        }
+                      }}
                     >
                       DASHBOARD
                     </a>
@@ -65,6 +85,16 @@ export default function Navigation() {
                         lineHeight: '17px',
                         color: 'rgb(244, 243, 239)',
                         fontWeight: 400
+                      }}
+                      onClick={() => {
+                        // Track sign in click
+                        if (typeof window !== 'undefined' && (window as any).posthog) {
+                          (window as any).posthog.capture('nav_clicked', {
+                            nav_item: 'sign_in',
+                            destination_url: 'https://osmosis.fm/enter',
+                            is_authenticated: false
+                          })
+                        }
                       }}
                     >
                       SIGN IN

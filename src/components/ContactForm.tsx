@@ -21,6 +21,19 @@ export default function ContactForm() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
     
+    // Track form submission attempt
+    if (typeof window !== 'undefined' && (window as any).posthog) {
+      (window as any).posthog.capture('contact_form_submitted', {
+        company: formData.company,
+        team_size: formData.teamSize,
+        role: formData.role,
+        has_message: !!formData.message,
+        source_url: window.location.href,
+        utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
+        utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || ''
+      })
+    }
+    
     // Determine API endpoint based on environment
     const apiBase = process.env.NODE_ENV === 'development' 
       ? 'http://localhost:8080'
@@ -54,6 +67,16 @@ export default function ContactForm() {
       
       if (response.ok && data.success) {
         setSubmitStatus('success')
+        
+        // Track successful submission
+        if (typeof window !== 'undefined' && (window as any).posthog) {
+          (window as any).posthog.capture('contact_form_success', {
+            company: formData.company,
+            team_size: formData.teamSize,
+            role: formData.role
+          })
+        }
+        
         // Reset form
         setFormData({
           name: '',
@@ -65,10 +88,28 @@ export default function ContactForm() {
         })
       } else {
         setSubmitStatus('error')
+        
+        // Track error
+        if (typeof window !== 'undefined' && (window as any).posthog) {
+          (window as any).posthog.capture('contact_form_error', {
+            error_type: 'api_error',
+            error_message: data.error
+          })
+        }
+        
         console.error('Form submission error:', data.error)
       }
     } catch (error) {
       setSubmitStatus('error')
+      
+      // Track network/other errors
+      if (typeof window !== 'undefined' && (window as any).posthog) {
+        (window as any).posthog.capture('contact_form_error', {
+          error_type: 'network_error',
+          error_message: error instanceof Error ? error.message : 'Unknown error'
+        })
+      }
+      
       console.error('Form submission failed:', error)
     } finally {
       setIsSubmitting(false)

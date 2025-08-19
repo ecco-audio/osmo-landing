@@ -76,6 +76,17 @@ export default function HeroSection() {
               <a
                 href={hero.cta.primaryUrl}
                 className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-secondary shadow-lg hover:shadow-xl"
+                onClick={() => {
+                  // Track CTA click
+                  if (typeof window !== 'undefined' && (window as any).posthog) {
+                    (window as any).posthog.capture('cta_clicked', {
+                      cta_text: hero.cta.primary,
+                      cta_location: 'hero',
+                      destination_url: hero.cta.primaryUrl,
+                      source_url: window.location.href
+                    })
+                  }
+                }}
               >
                 {hero.cta.primary}
               </a>
