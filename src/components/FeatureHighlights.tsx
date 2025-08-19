@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useMessaging } from '../lib/useMessaging'
 
 export default function FeatureHighlights() {
+  const messaging = useMessaging()
+  const { featureHighlights } = messaging
   return (
     <section data-testid="product-overview" className="py-16 lg:py-20" style={{ backgroundColor: '#F4F3EE' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +22,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.3, delay: 0.05 }}
             viewport={{ once: true }}
           >
-            Conversations distilled
+            {featureHighlights.sectionTitle}
           </motion.p>
           <motion.h2 
             className="section-header section-header-blue"
@@ -28,7 +31,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            The world is speaking. Osmosis listens.
+            {featureHighlights.headline}
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
@@ -37,8 +40,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Identify new opportunities, accelerate capital raises and sales, and stay 
-            ahead of changing market dynamics – all in one platform
+            {featureHighlights.subheadline}
           </motion.p>
         </motion.div>
 

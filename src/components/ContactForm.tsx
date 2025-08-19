@@ -8,15 +8,74 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    company: '',
+    teamSize: '',
+    role: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+    
+    // Determine API endpoint based on environment
+    const apiBase = process.env.NODE_ENV === 'development' 
+      ? 'http://localhost:8080'
+      : 'https://osmosis.fm'
+    
+    try {
+      const response = await fetch(`${apiBase}/api/sales/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          form_type: 'landing',
+          name: formData.name,
+          company: formData.company,
+          team_size: formData.teamSize,
+          use_case: formData.role,
+          message: formData.message || '',
+          subject: 'Landing Page Inquiry',
+          submission_metadata: {
+            source_url: window.location.href,
+            timestamp: new Date().toISOString(),
+            utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
+            utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || ''
+          }
+        })
+      })
+      
+      const data = await response.json()
+      
+      if (response.ok && data.success) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          teamSize: '',
+          role: '',
+          message: ''
+        })
+      } else {
+        setSubmitStatus('error')
+        console.error('Form submission error:', data.error)
+      }
+    } catch (error) {
+      setSubmitStatus('error')
+      console.error('Form submission failed:', error)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -50,19 +109,41 @@ export default function ContactForm() {
 
         {/* Contact Form */}
         <div className="bg-white rounded-xl p-8 shadow-sm mb-16">
-          {contact.formHeader && (
-            <div className="text-center mb-6">
+          {submitStatus === 'success' ? (
+            /* Success State */
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-green-600 text-2xl">✓</span>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {contact.formHeader}
+                Thank you for your inquiry!
               </h3>
-              {contact.helperText && (
-                <p className="text-sm text-gray-600">
-                  {contact.helperText}
-                </p>
-              )}
+              <p className="text-gray-600 mb-4">
+                We'll get back to you within 24 hours to discuss how Osmosis can help your team.
+              </p>
+              <p className="text-sm text-gray-500">
+                In the meantime, feel free to explore our solutions at{' '}
+                <a href="https://solutions.osmosis.fm" className="text-blue-600 hover:text-blue-700">
+                  solutions.osmosis.fm
+                </a>
+              </p>
             </div>
-          )}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          ) : (
+            /* Form State */
+            <>
+              {contact.formHeader && (
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {contact.formHeader}
+                  </h3>
+                  {contact.helperText && (
+                    <p className="text-sm text-gray-600">
+                      {contact.helperText}
+                    </p>
+                  )}
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
@@ -87,7 +168,7 @@ export default function ContactForm() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="jane@osmosis.fm"
+                  placeholder="jane@company.com"
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
@@ -95,15 +176,74 @@ export default function ContactForm() {
                 />
               </div>
             </div>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                  COMPANY
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your Company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="teamSize" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                  TEAM SIZE
+                </label>
+                <select
+                  id="teamSize"
+                  name="teamSize"
+                  value={formData.teamSize}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                  required
+                >
+                  <option value="">Select team size</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="201-1000">201-1000</option>
+                  <option value="1000+">1000+</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label htmlFor="role" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
+                ROLE
+              </label>
+              <select
+                id="role"
+                name="role"
+                value={formData.role}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors"
+                required
+              >
+                <option value="">Select your role</option>
+                <option value="Investment Management">Investment Management</option>
+                <option value="Investor Relations">Investor Relations</option>
+                <option value="Sales & Business Development">Sales & Business Development</option>
+                <option value="Research & Analytics">Research & Analytics</option>
+                <option value="Operations">Operations</option>
+                <option value="Executive Leadership">Executive Leadership</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
-                MESSAGE
+                MESSAGE <span className="text-gray-400 normal-case">(optional)</span>
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={6}
-                placeholder="Your message..."
+                rows={4}
+                placeholder="Any additional information you'd like to share..."
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full px-4 py-3 bg-gray-50 border-0 rounded-lg focus:ring-2 focus:ring-blue-500 focus:bg-white transition-colors resize-none"
@@ -111,11 +251,23 @@ export default function ContactForm() {
             </div>
             <button
               type="submit"
-              className="w-full bg-secondary text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+              disabled={isSubmitting || !formData.email || !formData.name || !formData.company || !formData.teamSize || !formData.role}
+              className="w-full bg-secondary text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Submit
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
+            
+            {/* Error Message */}
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-800 text-sm">
+                  ❌ Something went wrong. Please try again or email us directly at sales@osmosis.fm
+                </p>
+              </div>
+            )}
           </form>
+            </>
+          )}
         </div>
 
         {/* Benefits */}

@@ -44,6 +44,23 @@ type ContactMessaging = {
   helperText?: string
 }
 
+type FeatureHighlightsMessaging = {
+  sectionTitle: string
+  headline: string
+  subheadline: string
+}
+
+type BenefitItem = {
+  title: string
+  description: string
+}
+
+type BenefitsMessaging = {
+  sectionTitle: string
+  headline: string
+  items: BenefitItem[]
+}
+
 export function useMessaging(variant?: MessageVariant) {
   // Default to mandate_winning variant, but allow override via URL params for A/B testing
   const activeVariant = useMemo(() => {
@@ -69,6 +86,8 @@ export function useMessaging(variant?: MessageVariant) {
       hero: data.hero as HeroMessaging,
       features: data.features as FeaturesMessaging,
       contact: data.contact as ContactMessaging,
+      featureHighlights: data.featureHighlights as FeatureHighlightsMessaging,
+      benefits: data.benefits as BenefitsMessaging,
       testimonials: messagingData.testimonials,
       socialProof: messagingData.socialProof,
       navigation: messagingData.navigation,
@@ -88,6 +107,8 @@ export function getMessaging(variant: MessageVariant = 'mandate_winning') {
     hero: data.hero as HeroMessaging,
     features: data.features as FeaturesMessaging,
     contact: data.contact as ContactMessaging,
+    featureHighlights: data.featureHighlights as FeatureHighlightsMessaging,
+    benefits: data.benefits as BenefitsMessaging,
     testimonials: messagingData.testimonials,
     socialProof: messagingData.socialProof,
     navigation: messagingData.navigation,

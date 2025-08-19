@@ -21,7 +21,20 @@ export default function Navigation() {
           </div>
 
           {/* Auth-based Navigation */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
+            {/* Solutions Link */}
+            <a
+              href="https://solutions.osmosis.fm"
+              className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
+              style={{
+                fontSize: '12px',
+                lineHeight: '17px',
+                color: 'rgb(244, 243, 239)',
+                fontWeight: 400
+              }}
+            >
+              SOLUTIONS
+            </a>
             
             {!isLoading && (
               <>

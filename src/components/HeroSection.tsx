@@ -62,9 +62,9 @@ export default function HeroSection() {
             {hero.subheadline}
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTA */}
           <motion.div 
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8"
+            className="flex justify-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
@@ -80,20 +80,6 @@ export default function HeroSection() {
                 {hero.cta.primary}
               </a>
             </motion.div>
-            
-            {hero.cta.secondary && (
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <a
-                  href={hero.cta.secondaryUrl}
-                  className="inline-flex items-center justify-center px-8 py-4 rounded-2xl border-2 border-white/20 text-white hover:bg-white/10 transition-colors"
-                >
-                  {hero.cta.secondary}
-                </a>
-              </motion.div>
-            )}
           </motion.div>
 
           {/* Proof Metrics */}

@@ -255,12 +255,13 @@ export default function FeaturesSection() {
                   <p className="text-gray-600 mb-4">
                     {item.description}
                   </p>
-                  <motion.button 
-                    className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                  <motion.a 
+                    href="https://solutions.osmosis.fm"
+                    className="text-blue-600 font-medium hover:text-blue-700 transition-colors inline-block"
                     whileHover={{ x: 5 }}
                   >
                     Learn more →
-                  </motion.button>
+                  </motion.a>
                 </motion.div>
               )
             })}

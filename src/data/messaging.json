@@ -45,12 +45,10 @@
           "line1": "Intelligence that wins mandates",
           "line2": ""
         },
-        "subheadline": "Osmosis turns public allocator meetings and documents into a real-time opportunity feed—so IR and distribution teams know who's buying, what they want, and when to act.",
+        "subheadline": "Osmosis turns public allocator meetings and documents into a real-time opportunity feed so sales and IR teams know who's buying, what they want, and when to act.",
         "cta": {
-          "primary": "View live opportunities",
-          "primaryUrl": "https://solutions.osmosis.fm",
-          "secondary": "See how it works",
-          "secondaryUrl": "#features"
+          "primary": "GET STARTED",
+          "primaryUrl": "https://solutions.osmosis.fm"
         },
         "proofMetrics": [
           {
@@ -92,6 +90,43 @@
         "subheadline": "We'll tailor your watchlist in a 15-minute call.",
         "formHeader": "Get access to live allocator activity",
         "helperText": "No spam. We'll confirm coverage for your strategy and set up a live feed."
+      },
+      "featureHighlights": {
+        "sectionTitle": "Conversations distilled",
+        "headline": "The world is speaking. Osmosis listens.",
+        "subheadline": "Identify new opportunities, accelerate capital raises and sales, and stay ahead of changing market dynamics – all in one platform",
+        "features": [
+          {
+            "pill": "HIDDEN INSIGHTS",
+            "title": "Every conversation at your fingertips",
+            "description": "Access transcripts, documents, and recordings from allocator meetings and interviews.",
+            "cta": "Learn more"
+          },
+          {
+            "pill": "FUNDRAISING INTEL",
+            "title": "Raise funds faster and more efficiently.",
+            "description": "Get action plans based on the latest strategy updates from the largest allocators.",
+            "cta": "Learn more"
+          }
+        ]
+      },
+      "benefits": {
+        "sectionTitle": "KEY BENEFITS",
+        "headline": "Move faster and expand your coverage with Osmosis",
+        "items": [
+          {
+            "title": "Expand Your Coverage",
+            "description": "Stay on top of developments across thousands of orgs without manual tracking. Osmosis captures fleeting data that static databases miss."
+          },
+          {
+            "title": "Save Time & Resources",
+            "description": "Eliminate countless hours of research. Redirect efforts to high-value interactions that bring in more capital."
+          },
+          {
+            "title": "Empower Sales",
+            "description": "Deliver tailored updates to each sales rep, ensuring they have the insights they need to close faster and more confidently."
+          }
+        ]
       }
     }
   },
