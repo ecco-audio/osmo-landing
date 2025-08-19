@@ -98,7 +98,42 @@
             "name": "Tom, Capital Formation",
             "company": "$400B Global Investment Firm"
           }
-        ]
+        ],
+        "pipeline": {
+          "headline": "From conversation to meeting—this week.",
+          "steps": [
+            {
+              "label": "Hear",
+              "description": "Capture public IC meetings, hearings, interviews, and filings in near real time.",
+              "icon": "mic"
+            },
+            {
+              "label": "Detect",
+              "description": "AI flags capital-flow and strategy-shift signals in hours, not months.",
+              "icon": "sparkle"
+            },
+            {
+              "label": "Attribute",
+              "description": "Every quote is source-linked and tied to the speaker (CIO, trustee, consultant).",
+              "icon": "link"
+            },
+            {
+              "label": "Map",
+              "description": "Relationship graph reveals who influences decisions across plans and consultants.",
+              "icon": "network"
+            },
+            {
+              "label": "Act",
+              "description": "Personalized alerts, watchlists, and CRM actions so your team gets in first.",
+              "icon": "bolt"
+            }
+          ],
+          "metrics": [
+            "160 opps/month",
+            "20% hit rate (when 3P spotted)",
+            "Alerts within hours"
+          ]
+        }
       }
     },
     "mandate_winning": {

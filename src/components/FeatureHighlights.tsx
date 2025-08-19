@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import messaging from '../data/messaging.json'
+import PipelineSection from './PipelineSection'
 
 export default function FeatureHighlights() {
   const { featureHighlights } = messaging.variants.current
@@ -133,9 +134,18 @@ export default function FeatureHighlights() {
           </div>
         </motion.div>
 
+        {/* Pipeline Section - Insert between the two quotes */}
+        <div className="full-bleed my-20">
+          <PipelineSection 
+            headline={featureHighlights.pipeline.headline}
+            steps={featureHighlights.pipeline.steps}
+            metrics={featureHighlights.pipeline.metrics}
+          />
+        </div>
+
         {/* Second Section - Mirror Layout with 220px spacing */}
         <motion.div 
-          className="mt-52"
+          className="mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.05 }}
