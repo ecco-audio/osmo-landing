@@ -122,11 +122,11 @@ export default function FeatureHighlights() {
                   <span className="text-4xl font-serif" style={{ color: '#2A60F8' }}>"</span>
                 </div>
                 <p className="quote-text mb-4">
-                  I've sourced two $100M+ opportunities from Osmosis in the past month.
+                  {featureHighlights.testimonials[0].quote}
                 </p>
                 <div>
-                  <p className="font-semibold text-gray-900">IR Executive</p>
-                  <p className="text-gray-600">$30B Hedge Fund</p>
+                  <p className="font-semibold text-gray-900">{featureHighlights.testimonials[0].name}</p>
+                  <p className="text-gray-600">{featureHighlights.testimonials[0].company}</p>
                 </div>
               </motion.div>
             </motion.div>
@@ -161,11 +161,11 @@ export default function FeatureHighlights() {
                   <span className="text-4xl font-serif" style={{ color: '#2A60F8' }}>"</span>
                 </div>
                 <p className="quote-text mb-4">
-                  Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.
+                  {featureHighlights.testimonials[1].quote}
                 </p>
                 <div>
-                  <p className="font-semibold text-gray-900">Head of Distribution</p>
-                  <p className="text-gray-600">$400B Global Investment Firm</p>
+                  <p className="font-semibold text-gray-900">{featureHighlights.testimonials[1].name}</p>
+                  <p className="text-gray-600">{featureHighlights.testimonials[1].company}</p>
                 </div>
               </motion.div>
             </motion.div>

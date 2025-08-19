@@ -86,6 +86,18 @@
             "cta": "Learn more",
             "ctaUrl": "https://solutions.osmosis.fm"
           }
+        ],
+        "testimonials": [
+          {
+            "quote": "I've sourced two $100M+ opportunities from Osmosis in the past month.",
+            "name": "Aaron, Relationship Manager",
+            "company": "$30B Hedge Fund"
+          },
+          {
+            "quote": "Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.",
+            "name": "Tom, Capital Formation",
+            "company": "$400B Global Investment Firm"
+          }
         ]
       }
     },
