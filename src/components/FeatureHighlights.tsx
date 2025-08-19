@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import messaging from '../data/messaging.json'
 
 export default function FeatureHighlights() {
+  const { featureHighlights } = messaging.variants.current
   return (
     <section data-testid="product-overview" className="py-16 lg:py-20" style={{ backgroundColor: '#F4F3EE' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +21,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.3, delay: 0.05 }}
             viewport={{ once: true }}
           >
-            Conversations distilled
+            {featureHighlights.sectionPill}
           </motion.p>
           <motion.h2 
             className="section-header section-header-blue"
@@ -28,7 +30,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            The world is speaking. Osmosis listens.
+            {featureHighlights.headline}
           </motion.h2>
           <motion.p 
             className="text-lg text-gray-600 max-w-3xl mx-auto"
@@ -37,8 +39,7 @@ export default function FeatureHighlights() {
             transition={{ duration: 0.3, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Identify new opportunities, accelerate capital raises and sales, and stay 
-            ahead of changing market dynamics – all in one platform
+            {featureHighlights.description}
           </motion.p>
         </motion.div>
 
@@ -66,7 +67,7 @@ export default function FeatureHighlights() {
                 viewport={{ once: true }}
               >
                 <span className="section-pill">
-                  HIDDEN INSIGHTS
+                  {featureHighlights.sections[0].pill}
                 </span>
               </motion.div>
               <motion.h3 
@@ -76,8 +77,8 @@ export default function FeatureHighlights() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <span style={{ color: '#2A60F8' }}>Industry leaders shape markets.</span>{' '}
-                <span className="text-gray-500">We'll tell you when their script changes.</span>
+                <span style={{ color: '#2A60F8' }}>{featureHighlights.sections[0].headline.blue}</span>{' '}
+                <span className="text-gray-500">{featureHighlights.sections[0].headline.gray}</span>
               </motion.h3>
               <motion.div 
                 className="space-y-2 text-gray-600 mb-6"
@@ -86,10 +87,10 @@ export default function FeatureHighlights() {
                 transition={{ duration: 0.3, delay: 0.35 }}
                 viewport={{ once: true }}
               >
-                <p><strong>$6T</strong> in AUM tracked, <strong>500K</strong> meetings and interviews, <strong>daily and hourly updates</strong> so you never miss a change</p>
+                <p>{featureHighlights.sections[0].description}</p>
               </motion.div>
               <motion.a 
-                href="https://solutions.osmosis.fm"
+                href={featureHighlights.sections[0].ctaUrl}
                 className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +99,7 @@ export default function FeatureHighlights() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn more
+                {featureHighlights.sections[0].cta}
               </motion.a>
             </motion.div>
 
@@ -184,7 +185,7 @@ export default function FeatureHighlights() {
                 viewport={{ once: true }}
               >
                 <span className="section-pill">
-                  FUNDRAISING INTEL
+                  {featureHighlights.sections[1].pill}
                 </span>
               </motion.div>
               <motion.h3 
@@ -194,7 +195,7 @@ export default function FeatureHighlights() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <span style={{ color: '#2A60F8' }}>Raise funds faster and more efficiently.</span>
+                <span style={{ color: '#2A60F8' }}>{featureHighlights.sections[1].headline.blue}</span>
               </motion.h3>
               <motion.div 
                 className="space-y-2 text-gray-600 mb-6"
@@ -203,10 +204,10 @@ export default function FeatureHighlights() {
                 transition={{ duration: 0.3, delay: 0.35 }}
                 viewport={{ once: true }}
               >
-                <p>Get <strong>action plans</strong> based on the latest strategy updates from the largest allocators.</p>
+                <p>{featureHighlights.sections[1].description}</p>
               </motion.div>
               <motion.a 
-                href="https://solutions.osmosis.fm"
+                href={featureHighlights.sections[1].ctaUrl}
                 className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -215,7 +216,7 @@ export default function FeatureHighlights() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn more
+                {featureHighlights.sections[1].cta}
               </motion.a>
             </motion.div>
           </div>
