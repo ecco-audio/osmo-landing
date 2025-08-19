@@ -30,7 +30,29 @@ src/
 
 ## Development Server
 
-The app runs on [http://localhost:3002](http://localhost:3002) during development.
+The app runs on [http://localhost:4322](http://localhost:4322) during development.
+
+## Content Management
+
+### Messaging Variants
+
+The landing page supports A/B testing through messaging variants defined in `src/data/messaging.json`:
+
+- **`mandate_winning`** - Default variant focused on mandate intelligence (default)
+- **`current`** - Alternative variant for testing different messaging
+
+**Variant Selection:**
+- Default: Uses `mandate_winning` variant
+- URL Override: Add `?variant=current` or `?variant=mandate_winning` to the URL
+- Component Override: Pass variant to `useMessaging(variant)` hook
+
+**Examples:**
+- http://localhost:4322/ → `mandate_winning` variant  
+- http://localhost:4322/?variant=current → `current` variant
+
+### Global Styles
+
+CSS is managed centrally in `@ecco_gtm/src/app/globals.css` to maintain consistency across both landing page and solutions page.
 
 ## Pixel-Perfect Recreation Process
 

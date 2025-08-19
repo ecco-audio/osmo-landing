@@ -4,13 +4,38 @@
       "hero": {
         "preHeadline": "",
         "headline": {
-          "line1": "The world is speaking.",
-          "line2": "Osmosis listens."
+          "line1": "Real‑time allocator intelligence",
+          "line2": "for teams that win by being first"
         },
-        "subheadline": "Osmosis tracks public records from pension funds, corporations, governments, and nonprofits. We monitor meetings, earnings, interviews, and key documents, alerting you whenever a narrative shifts.",
+        "subheadline": "Osmosis tracks public allocator meetings and filings in real-time—showing who's allocating, what they said, and who influences decisions—so you contact the right LPs first.",
         "cta": {
-          "primary": "GET STARTED",
-          "primaryUrl": "https://osmosis.fm/enter"
+          "primary": "See live allocator activity",
+          "primaryUrl": "https://solutions.osmosis.fm",
+          "secondary": "Build my watchlist",
+          "secondaryUrl": "#contact",
+          "tertiary": "How it works",
+          "tertiaryUrl": "#how-it-works"
+        },
+        "trustStrip": {
+          "metrics": [
+            {
+              "value": "47",
+              "label": "allocator moves this week",
+              "isLive": true
+            },
+            {
+              "value": "4,000+",
+              "label": "meetings tracked"
+            },
+            {
+              "value": "360",
+              "label": "public plans"
+            },
+            {
+              "value": "20%",
+              "label": "hit rate with 3P intel"
+            }
+          ]
         }
       },
       "features": {
@@ -40,17 +65,36 @@
     },
     "mandate_winning": {
       "hero": {
-        "preHeadline": "Allocator Intelligence",
+        "preHeadline": "",
         "headline": {
-          "line1": "Intelligence that wins mandates",
-          "line2": ""
+          "line1": "Real‑time allocator intelligence",
+          "line2": "for teams that win by being first"
         },
-        "subheadline": "Osmosis turns public allocator meetings and documents into a real-time opportunity feed—so IR and distribution teams know who's buying, what they want, and when to act.",
+        "subheadline": "Osmosis tracks public allocator meetings and filings in real-time—showing who's allocating, what they said, and who influences decisions—so you contact the right LPs first.",
         "cta": {
-          "primary": "View live opportunities",
-          "primaryUrl": "https://solutions.osmosis.fm",
-          "secondary": "See how it works",
-          "secondaryUrl": "#features"
+          "primary": "See live allocator activity",
+          "primaryUrl": "https://solutions.osmosis.fm"
+        },
+        "trustStrip": {
+          "metrics": [
+            {
+              "value": "47",
+              "label": "allocator moves this week",
+              "isLive": true
+            },
+            {
+              "value": "4,000+",
+              "label": "meetings tracked"
+            },
+            {
+              "value": "360",
+              "label": "public plans"
+            },
+            {
+              "value": "20%",
+              "label": "hit rate with 3P intel"
+            }
+          ]
         },
         "proofMetrics": [
           {
@@ -98,11 +142,11 @@
   "testimonials": [
     {
       "quote": "I've sourced two $100M+ opportunities from Osmosis in the past month.",
-      "attribution": "IR Executive, $30B Hedge Fund"
+      "attribution": "Aaron, Relationship Manager, $30B Hedge Fund"
     },
     {
       "quote": "Raising capital is harder than ever. These insights allow our sales people to spend more time in front of the right investors getting quality at bats.",
-      "attribution": "Head of Distribution, $400B Global Investment Firm"
+      "attribution": "Tom, Capital Formation, $400B Global Investment Firm"
     }
   ],
   "socialProof": {

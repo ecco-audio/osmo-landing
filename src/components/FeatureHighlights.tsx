@@ -88,7 +88,8 @@ export default function FeatureHighlights() {
               >
                 <p><strong>$6T</strong> in AUM tracked, <strong>500K</strong> meetings and interviews, <strong>daily and hourly updates</strong> so you never miss a change</p>
               </motion.div>
-              <motion.button 
+              <motion.a 
+                href="https://solutions.osmosis.fm"
                 className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +99,7 @@ export default function FeatureHighlights() {
                 whileTap={{ scale: 0.95 }}
               >
                 Learn more
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Right Section - Quote in nested box */}
@@ -204,7 +205,8 @@ export default function FeatureHighlights() {
               >
                 <p>Get <strong>action plans</strong> based on the latest strategy updates from the largest allocators.</p>
               </motion.div>
-              <motion.button 
+              <motion.a 
+                href="https://solutions.osmosis.fm"
                 className="cta-button inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-secondary"
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -214,7 +216,7 @@ export default function FeatureHighlights() {
                 whileTap={{ scale: 0.95 }}
               >
                 Learn more
-              </motion.button>
+              </motion.a>
             </motion.div>
           </div>
         </motion.div>
