@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 
 interface PipelineProps {
   pill: string
@@ -11,6 +12,16 @@ interface PipelineProps {
 }
 
 export default function PipelineSection({ pill, headline, steps }: PipelineProps) {
+  const [activeStep, setActiveStep] = useState(0)
+
+  // Auto-advance the active step for the pulse effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length)
+    }, 2000) // Change every 2 seconds
+    return () => clearInterval(interval)
+  }, [steps.length])
+
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'mic':
@@ -63,24 +74,24 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
       style={{
-        padding: '80px 0',
+        padding: '60px 0',
         background: 'linear-gradient(135deg, #0C1224 0%, #0B1328 50%, #0A1834 100%)',
         position: 'relative',
         overflow: 'hidden'
       }}
     >
-      {/* Background gradient overlay */}
+      {/* Subtle background gradient */}
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(circle at 50% 0%, rgba(255, 154, 135, 0.15) 0%, transparent 70%)',
+        background: 'radial-gradient(circle at 50% 0%, rgba(255, 154, 135, 0.08) 0%, transparent 70%)',
         pointerEvents: 'none'
       }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <motion.p 
-            className="section-pill mb-6"
+            className="section-pill mb-4"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.05 }}
@@ -94,125 +105,135 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            style={{ fontFamily: 'var(--font-heading)' }}
+            style={{ fontFamily: 'var(--font-heading)', color: 'rgba(255, 255, 255, 0.95)' }}
           >
             {headline}
           </motion.h2>
         </div>
 
-        {/* Visual pipeline rail */}
-        <div className="relative h-20 mb-12" aria-hidden="true">
+        {/* Simplified visual pipeline rail */}
+        <div className="relative h-12 mb-10" aria-hidden="true">
           <svg 
-            viewBox="0 0 1200 64" 
+            viewBox="0 0 1200 32" 
             className="absolute inset-0 w-full h-full"
             xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
               <linearGradient id="pipelineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#FF9A87"/>
-                <stop offset="50%" stopColor="#F8613C"/>
-                <stop offset="100%" stopColor="#2A60F8"/>
+                <stop offset="0%" stopColor="#FF9A87" stopOpacity="0.3"/>
+                <stop offset="50%" stopColor="#F8613C" stopOpacity="0.5"/>
+                <stop offset="100%" stopColor="#FF9A87" stopOpacity="0.3"/>
               </linearGradient>
-              <filter id="pipelineGlow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
             </defs>
+            {/* Subtle base line */}
             <path 
-              d="M 100 32 L 1100 32" 
-              stroke="url(#pipelineGrad)" 
-              strokeWidth="3" 
-              filter="url(#pipelineGlow)" 
-              fill="none" 
-              opacity=".6"
+              d="M 100 16 L 1100 16" 
+              stroke="rgba(255, 154, 135, 0.2)" 
+              strokeWidth="1" 
+              fill="none"
             />
-            {/* Nodes */}
+            {/* Animated progress line */}
+            <motion.path 
+              d="M 100 16 L 1100 16" 
+              stroke="url(#pipelineGrad)" 
+              strokeWidth="2" 
+              fill="none"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+            {/* Step nodes */}
             {[0, 1, 2, 3, 4].map((i) => (
-              <circle 
+              <motion.circle 
                 key={i}
-                className="pipeline-node" 
                 cx={100 + (i * 250)} 
-                cy="32" 
-                r="6" 
-                fill="#FF9A87"
-                style={{
-                  filter: 'drop-shadow(0 0 10px rgba(255, 154, 135, 0.6))'
+                cy="16" 
+                r={activeStep === i ? "5" : "3"}
+                fill={activeStep === i ? "#FF9A87" : "rgba(255, 154, 135, 0.4)"}
+                animate={{
+                  scale: activeStep === i ? [1, 1.3, 1] : 1,
+                  opacity: activeStep === i ? 1 : 0.5
                 }}
+                transition={{ duration: 0.5 }}
               />
             ))}
-            {/* Animated pulse */}
-            <circle r="8" fill="#FF9A87">
-              <animate attributeName="cx" values="100;1100" dur="4s" repeatCount="indefinite"/>
-              <animate attributeName="cy" values="32;32" dur="4s" repeatCount="indefinite"/>
-              <animate attributeName="opacity" values="1;0.3;1;0.3;1" dur="4s" repeatCount="indefinite"/>
-              <animate attributeName="r" values="8;10;8;10;8" dur="4s" repeatCount="indefinite"/>
-            </circle>
           </svg>
         </div>
 
-        {/* Steps grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-12">
+        {/* Ghost cards - minimal, emphasis on labels */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
           {steps.map((step, index) => (
             <motion.div
               key={step.label}
-              className="pipeline-step"
-              initial={{ opacity: 0, y: 30 }}
+              className="pipeline-step text-center"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 + (index * 0.1) }}
+              transition={{ duration: 0.4, delay: 0.05 + (index * 0.05) }}
               viewport={{ once: true }}
-              whileHover={{ 
-                scale: 1.05,
-                transition: { duration: 0.2 }
+              animate={{
+                opacity: activeStep === index ? 1 : 0.6,
+                scale: activeStep === index ? 1.02 : 1
               }}
               style={{
-                background: 'rgba(255, 255, 255, 0.04)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 154, 135, 0.2)',
-                borderRadius: '16px',
-                padding: '24px',
+                padding: '20px 10px',
                 position: 'relative',
-                overflow: 'hidden'
+                transition: 'all 0.3s ease'
               }}
             >
-              {/* Gradient border effect on hover */}
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                borderRadius: '16px',
-                padding: '1px',
-                background: 'linear-gradient(135deg, transparent, rgba(255, 154, 135, 0.5), transparent)',
-                WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-                WebkitMaskComposite: 'xor',
-                maskComposite: 'exclude',
-                opacity: 0,
-                transition: 'opacity 0.3s'
-              }} className="hover:opacity-100" />
+              {/* Glow effect for active step */}
+              {activeStep === index && (
+                <motion.div 
+                  style={{
+                    position: 'absolute',
+                    inset: '-10px',
+                    background: 'radial-gradient(circle, rgba(255, 154, 135, 0.15) 0%, transparent 70%)',
+                    borderRadius: '12px',
+                    pointerEvents: 'none'
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
 
               <div className="relative z-10">
-                <div style={{
-                  width: '40px',
-                  height: '40px',
-                  marginBottom: '16px',
-                  color: '#FF9A87'
-                }}>
+                {/* Icon - smaller, subtle */}
+                <motion.div 
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    margin: '0 auto 12px',
+                    color: activeStep === index ? '#FF9A87' : 'rgba(255, 154, 135, 0.5)',
+                    transition: 'color 0.3s ease'
+                  }}
+                  animate={{
+                    y: activeStep === index ? [0, -3, 0] : 0
+                  }}
+                  transition={{ duration: 0.5 }}
+                >
                   {getIcon(step.icon)}
-                </div>
+                </motion.div>
+
+                {/* Label - THE HERO */}
                 <h3 style={{
-                  fontSize: '20px',
+                  fontSize: '24px',
                   fontWeight: 600,
-                  color: '#FF9A87',
-                  marginBottom: '12px',
-                  fontFamily: 'var(--font-heading)'
+                  color: activeStep === index ? '#FFFFFF' : 'rgba(255, 255, 255, 0.85)',
+                  marginBottom: '8px',
+                  fontFamily: 'var(--font-heading)',
+                  letterSpacing: '-0.02em',
+                  transition: 'color 0.3s ease'
                 }}>
                   {step.label}
                 </h3>
+
+                {/* Description - supporting caption */}
                 <p style={{
                   fontSize: '14px',
-                  lineHeight: '1.6',
-                  color: 'rgba(255, 255, 255, 0.8)'
+                  lineHeight: '1.4',
+                  color: 'rgba(255, 255, 255, 0.5)',
+                  maxWidth: '180px',
+                  margin: '0 auto'
                 }}>
                   {step.description}
                 </p>

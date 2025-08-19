@@ -105,27 +105,27 @@
           "steps": [
             {
               "label": "Hear",
-              "description": "Capture public IC meetings, hearings, interviews, and filings in near real time.",
+              "description": "Capture allocator conversations.",
               "icon": "mic"
             },
             {
               "label": "Detect",
-              "description": "AI flags capital-flow and strategy-shift signals in hours, not months.",
+              "description": "Identify signals.",
               "icon": "sparkle"
             },
             {
               "label": "Attribute",
-              "description": "Every quote is source-linked and tied to the speaker (CIO, trustee, consultant).",
+              "description": "Every quote tied to speaker.",
               "icon": "link"
             },
             {
               "label": "Map",
-              "description": "Relationship graph reveals who influences decisions across plans and consultants.",
+              "description": "Reveal who influences decisions.",
               "icon": "network"
             },
             {
               "label": "Act",
-              "description": "Personalized alerts, watchlists, and CRM actions so your team gets in first.",
+              "description": "Send personalized alerts.",
               "icon": "bolt"
             }
           ],
