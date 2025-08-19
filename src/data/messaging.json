@@ -100,7 +100,8 @@
           }
         ],
         "pipeline": {
-          "headline": "From conversation to meeting—this week.",
+          "pill": "AI-NATIVE PLATFORM",
+          "headline": "The world is speaking. Osmosis listens.",
           "steps": [
             {
               "label": "Hear",

@@ -1,16 +1,16 @@
 import { motion } from 'framer-motion'
 
 interface PipelineProps {
+  pill: string
   headline: string
   steps: Array<{
     label: string
     description: string
     icon: string
   }>
-  metrics: string[]
 }
 
-export default function PipelineSection({ headline, steps, metrics }: PipelineProps) {
+export default function PipelineSection({ pill, headline, steps }: PipelineProps) {
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'mic':
@@ -78,16 +78,27 @@ export default function PipelineSection({ headline, steps, metrics }: PipelinePr
       }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.h2 
-          className="text-5xl font-light text-white mb-12 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          viewport={{ once: true }}
-          style={{ fontFamily: 'var(--font-heading)' }}
-        >
-          {headline}
-        </motion.h2>
+        <div className="text-center mb-12">
+          <motion.p 
+            className="section-pill mb-6"
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.05 }}
+            viewport={{ once: true }}
+          >
+            {pill}
+          </motion.p>
+          <motion.h2 
+            className="text-5xl font-light text-white text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            {headline}
+          </motion.h2>
+        </div>
 
         {/* Visual pipeline rail */}
         <div className="relative h-20 mb-12" aria-hidden="true">
@@ -209,35 +220,6 @@ export default function PipelineSection({ headline, steps, metrics }: PipelinePr
             </motion.div>
           ))}
         </div>
-
-        {/* Metrics chips */}
-        <motion.div 
-          className="flex flex-wrap gap-3 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-        >
-          {metrics.map((metric, index) => (
-            <motion.span
-              key={metric}
-              whileHover={{ scale: 1.1 }}
-              style={{
-                padding: '8px 16px',
-                borderRadius: '999px',
-                background: 'rgba(255, 154, 135, 0.1)',
-                border: '1px solid rgba(255, 154, 135, 0.4)',
-                color: '#FF9A87',
-                fontSize: '13px',
-                fontWeight: 500,
-                fontFamily: 'var(--font-mono)',
-                letterSpacing: '0.02em'
-              }}
-            >
-              {metric}
-            </motion.span>
-          ))}
-        </motion.div>
       </div>
     </motion.section>
   )

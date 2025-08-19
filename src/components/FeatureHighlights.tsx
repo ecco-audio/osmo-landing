@@ -137,9 +137,9 @@ export default function FeatureHighlights() {
         {/* Pipeline Section - Insert between the two quotes */}
         <div className="full-bleed my-20">
           <PipelineSection 
+            pill={featureHighlights.pipeline.pill}
             headline={featureHighlights.pipeline.headline}
             steps={featureHighlights.pipeline.steps}
-            metrics={featureHighlights.pipeline.metrics}
           />
         </div>
 
