@@ -135,6 +135,26 @@
             "Alerts within hours"
           ]
         },
+        "benefits": {
+          "pill": "STEP-FUNCTION ADVANTAGE",
+          "headline": "Databases are libraries. Osmosis is your radar.",
+          "subheadline": "Static tools update over years, not hours. Our AI wizard builds your personalized radar in minutes—delivering fresh, actionable insights while legacy databases collect dust.",
+          "points": [
+            {
+              "title": "Minutes to actionable intelligence",
+              "description": "2-minute AI onboarding builds your watchlists and alert routes automatically. No manual setup, no lengthy configurations."
+            },
+            {
+              "title": "Live signals vs. stale reports",
+              "description": "Fresh insights in hours, not quarters. While databases show you what happened, Osmosis shows you what's happening now."
+            },
+            {
+              "title": "Predictive cues for this week's outreach",
+              "description": "AI flags the best opportunities and timing. Turn intelligence into immediate action, not eventual research."
+            }
+          ],
+          "footnote": "Keep legacy tools for static reference; add Osmosis to win on timing."
+        },
         "capabilities": {
           "headline": "Signals that turn into action.",
           "items": [
