@@ -58,9 +58,11 @@
         ]
       },
       "contact": {
-        "sectionTitle": "READY TO STREAMLINE?",
-        "headline": "Start your free trial",
-        "subheadline": "Fill out this quick form to start a free trial, or feel free to reach out with any other questions."
+        "sectionTitle": "YOUR NEXT MANDATE IS ALREADY IN MOTION",
+        "headline": "See where allocators are leaning today",
+        "subheadline": "We'll tailor your watchlist in a 15-minute call.",
+        "formHeader": "Get access to live allocator activity",
+        "helperText": "No spam. We'll confirm coverage for your strategy and set up a live feed."
       },
       "featureHighlights": {
         "sectionPill": "SPEED WINS",
@@ -138,11 +140,11 @@
         "benefits": {
           "pill": "STEP-FUNCTION ADVANTAGE",
           "headline": "Databases are libraries. Osmosis is your radar.",
-          "subheadline": "Static tools update over years, not hours. Our AI wizard builds your personalized radar in minutes—delivering fresh, actionable insights while legacy databases collect dust.",
+          "subheadline": "Static tools update over years, not hours. Our AI Planner builds your personalized radar in minutes—delivering fresh, actionable insights while legacy databases collect dust.",
           "points": [
             {
               "title": "Minutes to actionable intelligence",
-              "description": "2-minute AI onboarding builds your watchlists and alert routes automatically. No manual setup, no lengthy configurations."
+              "description": "2-minute AI Planner builds your watchlists and alert routes automatically. No manual setup, no lengthy configurations."
             },
             {
               "title": "Live signals vs. stale reports",
@@ -152,8 +154,7 @@
               "title": "Predictive cues for this week's outreach",
               "description": "AI flags the best opportunities and timing. Turn intelligence into immediate action, not eventual research."
             }
-          ],
-          "footnote": "Keep legacy tools for static reference; add Osmosis to win on timing."
+          ]
         },
         "capabilities": {
           "headline": "Signals that turn into action.",
@@ -339,9 +340,9 @@
     "cta": {
       "headline": "Your next mandate is already in motion",
       "subheadline": "See where allocators are leaning today—and act first.",
-      "primary": "View live opportunities",
+      "primary": "Find allocators actively investing to your strategy today",
       "primaryUrl": "https://solutions.osmosis.fm",
-      "secondary": "Book a 15-minute demo",
+      "secondary": "Book a 15‑minute fit check",
       "secondaryUrl": "#contact"
     }
   }

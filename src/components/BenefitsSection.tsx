@@ -106,25 +106,6 @@ export default function BenefitsSection() {
           ))}
         </div>
 
-        {/* Footnote */}
-        <motion.div 
-          className="text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <p style={{
-            fontSize: '14px',
-            color: 'rgba(102, 102, 102, 0.8)',
-            fontStyle: 'italic',
-            fontFamily: 'var(--font-sans)',
-            maxWidth: '600px',
-            margin: '0 auto'
-          }}>
-            {benefits.footnote}
-          </p>
-        </motion.div>
       </div>
     </section>
   )
