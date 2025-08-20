@@ -84,8 +84,8 @@ export function useMessaging(variant?: MessageVariant) {
       }
     }
     
-    // Default to the new mandate-winning messaging
-    return 'mandate_winning' as MessageVariant
+    // Default to current messaging with updated copy
+    return 'current' as MessageVariant
   }, [variant])
 
   const messaging = useMemo(() => {
@@ -109,7 +109,7 @@ export function useMessaging(variant?: MessageVariant) {
 }
 
 // Helper function to get messaging without React hook (for server-side usage)
-export function getMessaging(variant: MessageVariant = 'mandate_winning') {
+export function getMessaging(variant: MessageVariant = 'current') {
   const data = messagingData.variants[variant]
   
   return {

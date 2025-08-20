@@ -106,6 +106,24 @@ export default function BenefitsSection() {
           ))}
         </div>
 
+        {/* CTA Button */}
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <motion.a
+            href="https://solutions.osmosis.fm"
+            className="cta-button inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-secondary shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            See live allocator activity
+          </motion.a>
+        </motion.div>
+
       </div>
     </section>
   )
