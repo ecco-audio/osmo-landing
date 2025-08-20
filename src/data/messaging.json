@@ -177,10 +177,10 @@
             {
               "id": "workflow",
               "label": "Workflow delivery",
-              "title": "Workflow delivery (CRM/Slack/Email)",
+              "title": "Workflow delivery (Email)",
               "benefit": "Auto-route intel; no drop-offs.",
               "action": "Assign to PM/coverage.",
-              "chips": ["Salesforce/HubSpot", "Slack/Email", "Audit trail"],
+              "chips": ["Email delivery", "CRM coming soon", "Audit trail"],
               "ctaText": "See a live alert"
             },
             {

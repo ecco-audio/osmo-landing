@@ -1,11 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import messaging from '../data/messaging.json'
 
 export default function CapabilitiesSection() {
   const capabilities = messaging.variants.current?.featureHighlights?.capabilities
   const [activeItem, setActiveItem] = useState(capabilities?.items?.[0]?.id || 'flow')
-  const [lastUpdated, setLastUpdated] = useState(12)
   
   // Add null check
   if (!capabilities || !capabilities.items || capabilities.items.length === 0) {
@@ -13,14 +12,6 @@ export default function CapabilitiesSection() {
   }
   
   const currentItem = capabilities.items.find(item => item.id === activeItem) || capabilities.items[0]
-
-  // Update freshness cue periodically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLastUpdated(prev => prev + 1)
-    }, 60000) // Update every minute
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <section 
@@ -161,23 +152,6 @@ export default function CapabilitiesSection() {
                   position: 'relative'
                 }}
               >
-                {/* Freshness cue */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.7 }}
-                  transition={{ delay: 0.1 }}
-                  style={{
-                    fontSize: '12px',
-                    letterSpacing: '0.08em',
-                    marginBottom: '6px',
-                    color: 'rgba(255, 255, 255, 0.5)',
-                    fontFamily: 'var(--font-mono)',
-                    textTransform: 'uppercase'
-                  }}
-                >
-                  Updated {lastUpdated}m ago
-                </motion.div>
-
                 <h3 style={{
                   fontSize: '32px',
                   fontWeight: 600,
