@@ -22,9 +22,8 @@ export default function ContactForm() {
     setSubmitStatus('idle')
     
     // Track form submission attempt
-    if (typeof window !== 'undefined' && window.posthog) {
-      window.posthog.capture('contact_form_submitted', {
-        source: 'landing',
+    if (typeof window !== 'undefined' && (window as any).posthog) {
+      (window as any).posthog.capture('contact_form_submitted', {
         company: formData.company,
         team_size: formData.teamSize,
         role: formData.role,
@@ -32,13 +31,13 @@ export default function ContactForm() {
         source_url: window.location.href,
         utm_source: new URLSearchParams(window.location.search).get('utm_source') || 'direct',
         utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || ''
-      });
+      })
     }
     
     // Determine API endpoint based on environment
     const apiBase = process.env.NODE_ENV === 'development' 
       ? 'http://localhost:8080'
-      : 'https://osmosis.fm';
+      : 'https://osmosis.fm'
     
     try {
       const response = await fetch(`${apiBase}/api/sales/submit`, {
@@ -62,21 +61,20 @@ export default function ContactForm() {
             utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || ''
           }
         })
-      });
+      })
       
-      const data = await response.json();
+      const data = await response.json()
       
       if (response.ok && data.success) {
-        setSubmitStatus('success');
+        setSubmitStatus('success')
         
         // Track successful submission
-        if (typeof window !== 'undefined' && window.posthog) {
-          window.posthog.capture('contact_form_success', {
-            source: 'landing',
+        if (typeof window !== 'undefined' && (window as any).posthog) {
+          (window as any).posthog.capture('contact_form_success', {
             company: formData.company,
             team_size: formData.teamSize,
             role: formData.role
-          });
+          })
         }
         
         // Reset form
@@ -87,36 +85,34 @@ export default function ContactForm() {
           teamSize: '',
           role: '',
           message: ''
-        });
+        })
       } else {
-        setSubmitStatus('error');
+        setSubmitStatus('error')
         
         // Track error
-        if (typeof window !== 'undefined' && window.posthog) {
-          window.posthog.capture('contact_form_error', {
-            source: 'landing',
+        if (typeof window !== 'undefined' && (window as any).posthog) {
+          (window as any).posthog.capture('contact_form_error', {
             error_type: 'api_error',
             error_message: data.error
-          });
+          })
         }
         
-        console.error('Form submission error:', data.error);
+        console.error('Form submission error:', data.error)
       }
     } catch (error) {
-      setSubmitStatus('error');
+      setSubmitStatus('error')
       
       // Track network/other errors
-      if (typeof window !== 'undefined' && window.posthog) {
-        window.posthog.capture('contact_form_error', {
-          source: 'landing',
+      if (typeof window !== 'undefined' && (window as any).posthog) {
+        (window as any).posthog.capture('contact_form_error', {
           error_type: 'network_error',
           error_message: error instanceof Error ? error.message : 'Unknown error'
-        });
+        })
       }
       
-      console.error('Form submission failed:', error);
+      console.error('Form submission failed:', error)
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
   }
 
@@ -154,19 +150,41 @@ export default function ContactForm() {
 
         {/* Contact Form */}
         <div className="bg-white rounded-xl p-8 shadow-sm mb-16">
-          {contact.formHeader && (
-            <div className="text-center mb-6">
+          {submitStatus === 'success' ? (
+            /* Success State */
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-green-600 text-2xl">✓</span>
+              </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {contact.formHeader}
+                Thank you for your inquiry!
               </h3>
-              {contact.helperText && (
-                <p className="text-sm text-gray-600">
-                  {contact.helperText}
-                </p>
-              )}
+              <p className="text-gray-600 mb-4">
+                We'll get back to you within 24 hours to discuss how Osmosis can help your team.
+              </p>
+              <p className="text-sm text-gray-500">
+                In the meantime, feel free to explore our solutions at{' '}
+                <a href="https://solutions.osmosis.fm" className="text-blue-600 hover:text-blue-700">
+                  solutions.osmosis.fm
+                </a>
+              </p>
             </div>
-          )}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          ) : (
+            /* Form State */
+            <>
+              {contact.formHeader && (
+                <div className="text-center mb-6">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {contact.formHeader}
+                  </h3>
+                  {contact.helperText && (
+                    <p className="text-sm text-gray-600">
+                      {contact.helperText}
+                    </p>
+                  )}
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid sm:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-500 mb-2 uppercase tracking-wider">
@@ -280,15 +298,6 @@ export default function ContactForm() {
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
             
-            {/* Success Message */}
-            {submitStatus === 'success' && (
-              <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
-                <p className="text-green-800 text-sm">
-                  ✅ Thank you for your inquiry! We'll get back to you within 24 hours.
-                </p>
-              </div>
-            )}
-            
             {/* Error Message */}
             {submitStatus === 'error' && (
               <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -298,6 +307,8 @@ export default function ContactForm() {
               </div>
             )}
           </form>
+            </>
+          )}
         </div>
 
         {/* Benefits */}
