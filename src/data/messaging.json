@@ -142,55 +142,55 @@
               "id": "flow",
               "label": "Capital flow signals",
               "title": "Capital flow signals",
-              "benefit": "Prioritize allocators deploying now. Focus coverage where money is moving.",
+              "benefit": "Prioritize allocators deploying now.",
               "action": "Route to owner; outreach this week.",
               "chips": ["Alerts in hours", "160 opps/month", "Source-linked"],
-              "ctaText": "Build my watchlist"
+              "ctaText": "See a live alert"
             },
             {
               "id": "benchmarks",
               "label": "Competitive benchmarks",
               "title": "Competitive benchmarks",
-              "benefit": "See who else is in the room. Sharpen positioning; pick your angle.",
-              "action": "Sequence outreach to avoid conflicts.",
+              "benefit": "See who else is pitching; sharpen the angle.",
+              "action": "Sequence to avoid overlap.",
               "chips": ["Live mentions", "Strategy context", "3P → 20% hit rate"],
-              "ctaText": "Build my watchlist"
+              "ctaText": "See a live alert"
             },
             {
               "id": "quotes",
               "label": "Speaker-attributed quotes",
               "title": "Speaker-attributed quotes",
-              "benefit": "Open with their own words. Lift reply rates with context.",
-              "action": "Reference the quote; propose the step.",
+              "benefit": "Open with their own words.",
+              "action": "Reference the quote; propose next step.",
               "chips": ["Speaker-tied", "Source links", "Copy-ready line"],
-              "ctaText": "Build my watchlist"
+              "ctaText": "See a live alert"
             },
             {
               "id": "mapping",
               "label": "Relationship mapping",
               "title": "Relationship mapping",
-              "benefit": "Work the real decision network. Find the path to \"yes.\"",
+              "benefit": "Work the real influence chain.",
               "action": "Engage influencers; align timing.",
-              "chips": ["Influence graph", "Plan + consultant view", "Role aware"],
-              "ctaText": "Build my watchlist"
+              "chips": ["Influence graph", "Plan + consultant", "Role aware"],
+              "ctaText": "See a live alert"
             },
             {
               "id": "workflow",
               "label": "Workflow delivery",
               "title": "Workflow delivery (CRM/Slack/Email)",
-              "benefit": "Route intel to the right owner. Eliminate drop-offs; move faster.",
-              "action": "Auto-assign to PM/coverage.",
+              "benefit": "Auto-route intel; no drop-offs.",
+              "action": "Assign to PM/coverage.",
               "chips": ["Salesforce/HubSpot", "Slack/Email", "Audit trail"],
-              "ctaText": "Build my watchlist"
+              "ctaText": "See a live alert"
             },
             {
               "id": "prep",
               "label": "Meeting prep packs",
               "title": "Meeting prep packs",
-              "benefit": "Walk in pre-briefed—in minutes. Run confident meetings with less prep.",
-              "action": "Download pack; brief the team.",
+              "benefit": "Walk in pre-briefed—in minutes.",
+              "action": "Download; brief the team.",
               "chips": ["Speaker quotes", "Plan context", "Next best action"],
-              "ctaText": "Build my watchlist"
+              "ctaText": "See a live alert"
             }
           ]
         }
