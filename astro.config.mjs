@@ -11,4 +11,9 @@ export default defineConfig({
       applyBaseStyles: false,
     })
   ],
+  vite: {
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+  },
 });
