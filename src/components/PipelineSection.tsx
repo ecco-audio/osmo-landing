@@ -90,7 +90,9 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
         backgroundRepeat: 'no-repeat',
         opacity: 0.15,
         pointerEvents: 'none',
-        filter: 'blur(1px)'
+        filter: 'blur(1px)',
+        WebkitMask: 'radial-gradient(ellipse 600px 500px at center 120px, rgba(0,0,0,1) 30%, rgba(0,0,0,0.8) 60%, transparent 100%)',
+        mask: 'radial-gradient(ellipse 600px 500px at center 120px, rgba(0,0,0,1) 30%, rgba(0,0,0,0.8) 60%, transparent 100%)'
       }} />
       
       {/* Subtle background gradient overlay */}
