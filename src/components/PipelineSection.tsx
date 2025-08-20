@@ -80,7 +80,20 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
         overflow: 'hidden'
       }}
     >
-      {/* Subtle background gradient */}
+      {/* Earth globe background */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(/earth-night-bg.jpg)',
+        backgroundSize: '800px 800px',
+        backgroundPosition: 'center 120px',
+        backgroundRepeat: 'no-repeat',
+        opacity: 0.15,
+        pointerEvents: 'none',
+        filter: 'blur(1px)'
+      }} />
+      
+      {/* Subtle background gradient overlay */}
       <div style={{
         position: 'absolute',
         inset: 0,
