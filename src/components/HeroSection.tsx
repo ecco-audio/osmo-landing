@@ -93,8 +93,49 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Proof Metrics */}
-          {hero.proofMetrics && (
+          {/* Trust Strip */}
+          {hero.trustStrip && (
+            <motion.div 
+              className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0, ease: "easeOut" }}
+            >
+              {hero.trustStrip.metrics.map((metric, index) => (
+                <motion.div 
+                  key={index}
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 + (index * 0.1), ease: "easeOut" }}
+                >
+                  <div className="text-xl md:text-2xl font-bold text-white mb-1 flex items-center justify-center gap-2">
+                    {metric.value}
+                    {metric.isLive && (
+                      <motion.div
+                        className="w-2 h-2 bg-green-400 rounded-full"
+                        animate={{ 
+                          scale: [1, 1.2, 1],
+                          opacity: [0.7, 1, 0.7]
+                        }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    )}
+                  </div>
+                  <div className="text-xs text-white/70 font-medium">
+                    {metric.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+
+          {/* Legacy Proof Metrics (fallback) */}
+          {hero.proofMetrics && !hero.trustStrip && (
             <motion.div 
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8"
               initial={{ opacity: 0, y: 20 }}
