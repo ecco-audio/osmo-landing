@@ -134,6 +134,65 @@
             "20% hit rate (when 3P spotted)",
             "Alerts within hours"
           ]
+        },
+        "capabilities": {
+          "headline": "Signals that turn into action.",
+          "items": [
+            {
+              "id": "flow",
+              "label": "Capital flow signals",
+              "title": "Capital flow signals",
+              "benefit": "Prioritize allocators deploying now. Focus coverage where money is moving.",
+              "action": "Route to owner; outreach this week.",
+              "chips": ["Alerts in hours", "160 opps/month", "Source-linked"],
+              "ctaText": "Build my watchlist"
+            },
+            {
+              "id": "benchmarks",
+              "label": "Competitive benchmarks",
+              "title": "Competitive benchmarks",
+              "benefit": "See who else is in the room. Sharpen positioning; pick your angle.",
+              "action": "Sequence outreach to avoid conflicts.",
+              "chips": ["Live mentions", "Strategy context", "3P → 20% hit rate"],
+              "ctaText": "Build my watchlist"
+            },
+            {
+              "id": "quotes",
+              "label": "Speaker-attributed quotes",
+              "title": "Speaker-attributed quotes",
+              "benefit": "Open with their own words. Lift reply rates with context.",
+              "action": "Reference the quote; propose the step.",
+              "chips": ["Speaker-tied", "Source links", "Copy-ready line"],
+              "ctaText": "Build my watchlist"
+            },
+            {
+              "id": "mapping",
+              "label": "Relationship mapping",
+              "title": "Relationship mapping",
+              "benefit": "Work the real decision network. Find the path to \"yes.\"",
+              "action": "Engage influencers; align timing.",
+              "chips": ["Influence graph", "Plan + consultant view", "Role aware"],
+              "ctaText": "Build my watchlist"
+            },
+            {
+              "id": "workflow",
+              "label": "Workflow delivery",
+              "title": "Workflow delivery (CRM/Slack/Email)",
+              "benefit": "Route intel to the right owner. Eliminate drop-offs; move faster.",
+              "action": "Auto-assign to PM/coverage.",
+              "chips": ["Salesforce/HubSpot", "Slack/Email", "Audit trail"],
+              "ctaText": "Build my watchlist"
+            },
+            {
+              "id": "prep",
+              "label": "Meeting prep packs",
+              "title": "Meeting prep packs",
+              "benefit": "Walk in pre-briefed—in minutes. Run confident meetings with less prep.",
+              "action": "Download pack; brief the team.",
+              "chips": ["Speaker quotes", "Plan context", "Next best action"],
+              "ctaText": "Build my watchlist"
+            }
+          ]
         }
       }
     },
@@ -186,21 +245,21 @@
         ]
       },
       "features": {
-        "sectionTitle": "WHAT YOU CAN DO WITH OSMOSIS",
-        "headline": "Turn allocator signals into pipeline",
+        "sectionTitle": "PERSONALIZED INTELLIGENCE",
+        "headline": "Turn speed into your advantage",
         "subheadline": "",
         "items": [
           {
-            "title": "Be first to the meeting",
-            "description": "Alerts when a plan's priorities shift or a new sleeve opens. Guidance on who to contact and why now."
+            "title": "The right LPs, right now",
+            "description": "Personalized watchlists identify allocators with fresh dollars to deploy — by plan, strategy, and check size."
           },
           {
-            "title": "Personalized Mandate Alerts",
-            "description": "Get real-time alerts when allocators discuss new mandates, allocation changes, or strategic shifts that create opportunities for your fund."
+            "title": "Perfect timing",
+            "description": "Alerts within hours of IC/CIO/consultant remarks let youreach out before consultants’ memos"
           },
           {
-            "title": "Spend time where it matters",
-            "description": "Thousands of meetings distilled into clear asks, timing, and constraints. Route insights to the right person on your team."
+            "title": "Find the winning angle",
+            "description": "Speaker‑attributed quotes and context for your opener - “Here’s what your CIO said on Tuesday…”"
           }
         ]
       },
