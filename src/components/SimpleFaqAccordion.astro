@@ -6,11 +6,70 @@ export interface Props {
 
 const { question, sectionId } = Astro.props;
 
+// Parse flat details array into nested sections based on colon pattern
+function parseDetailsIntoSections(details: string[]): Array<{header: string, items: string[]}> {
+  const sections: Array<{header: string, items: string[]}> = [];
+  let currentSection: {header: string, items: string[]} | null = null;
+  
+  details.forEach(item => {
+    // Remove leading bullet and trim
+    const cleanItem = item.replace(/^•\s*/, '').trim();
+    
+    // Enhanced colon detection - check for patterns like:
+    // - "text:"
+    // - "**text:**" 
+    // - "**text:** something else"
+    // - "• **text:**"
+    const colonPatterns = [
+      /^(.+):$/, // Simple "text:"
+      /^\*\*(.+):\*\*$/, // "**text:**"
+      /^\*\*(.+):\*\*\s+/, // "**text:** more text"
+      /^(.+):\s*$/ // "text: " with trailing space
+    ];
+    
+    let isHeader = false;
+    for (const pattern of colonPatterns) {
+      if (pattern.test(cleanItem)) {
+        isHeader = true;
+        break;
+      }
+    }
+    
+    if (isHeader) {
+      // New section header
+      if (currentSection) {
+        sections.push(currentSection); // Save previous section
+      }
+      currentSection = {
+        header: cleanItem,
+        items: []
+      };
+    } else {
+      // Add to current section or create standalone item
+      if (currentSection) {
+        currentSection.items.push(cleanItem);
+      } else {
+        // Item without a header - treat as standalone
+        sections.push({ header: '', items: [cleanItem] });
+      }
+    }
+  });
+  
+  // Don't forget the last section
+  if (currentSection) {
+    sections.push(currentSection);
+  }
+  
+  return sections;
+}
+
 // Simple markdown to HTML converter for basic formatting
 function processMarkdown(text: string): string {
   if (!text) return '';
   
   return text
+    // Remove leading bullets since we handle them with CSS
+    .replace(/^•\s*/, '')
     // Bold text: **text** -> <strong>text</strong>
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     // Links: [text](url) -> <a href="url">text</a>
@@ -19,7 +78,6 @@ function processMarkdown(text: string): string {
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     // Checkmarks and special bullets
     .replace(/✓/g, '✓')
-    .replace(/•/g, '•')
     // Line breaks
     .replace(/\n/g, '<br/>');
 }
@@ -42,12 +100,56 @@ function processMarkdown(text: string): string {
       <p class="answer-summary" set:html={processMarkdown(question.answer.summary)}></p>
     )}
     
-    {question.answer.details && Array.isArray(question.answer.details) && (
-      <ul class="answer-list">
-        {question.answer.details.map((detail: string) => (
-          <li set:html={processMarkdown(detail)}></li>
+    {question.answer.timeline && Array.isArray(question.answer.timeline) && (
+      <div class="timeline-list">
+        {question.answer.timeline.map((timelineItem: any) => (
+          <div class="timeline-item">
+            <div class="timeline-header">
+              <strong class="timeline-time">{timelineItem.time}</strong>
+              <span class="timeline-event" set:html={processMarkdown(timelineItem.event)}></span>
+            </div>
+            {timelineItem.details && timelineItem.details.length > 0 && (
+              <ul class="timeline-details">
+                {timelineItem.details.map((detail: string) => (
+                  <li set:html={processMarkdown(detail)}></li>
+                ))}
+              </ul>
+            )}
+          </div>
         ))}
-      </ul>
+      </div>
+    )}
+    
+    {question.answer.sections && Array.isArray(question.answer.sections) && (
+      <div class="answer-sections">
+        {question.answer.sections.map((section: any) => (
+          <div class="answer-section">
+            <h4 class="section-header" set:html={processMarkdown(section.header)}></h4>
+            <ul class="section-items">
+              {section.items.map((item: string) => (
+                <li set:html={processMarkdown(item)}></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )}
+
+    {question.answer.details && Array.isArray(question.answer.details) && (
+      <div class="answer-sections">
+        {parseDetailsIntoSections(question.answer.details).map((section) => (
+          <div class="answer-section">
+            {section.header && (
+              <h4 class="section-header" set:html={processMarkdown(section.header)}></h4>
+            )}
+            <ul class={section.header ? "section-items" : "answer-list"}>
+              {section.items.map((item: string) => (
+                <li set:html={processMarkdown(item)}></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     )}
     
     {question.answer.proof && (
@@ -94,5 +196,100 @@ function processMarkdown(text: string): string {
 
 .faq-answer a:hover {
   text-decoration: underline;
+}
+
+/* Timeline formatting */
+.timeline-list {
+  margin: 16px 0;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-header {
+  margin-bottom: 8px;
+}
+
+.timeline-time {
+  color: var(--brand-primary);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.timeline-event {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.timeline-details {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+}
+
+.timeline-details li {
+  position: relative;
+  padding-left: 8px;
+  margin: 6px 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.timeline-details li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+  color: var(--brand-primary);
+  font-weight: bold;
+}
+
+/* Nested sections formatting */
+.answer-sections {
+  margin: 16px 0;
+}
+
+.answer-section {
+  margin-bottom: 20px;
+}
+
+.answer-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-header {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.section-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.section-items li {
+  position: relative;
+  padding-left: 8px;
+  margin: 6px 0;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.section-items li::before {
+  content: "•";
+  position: absolute;
+  left: -16px;
+  color: var(--brand-primary);
+  font-weight: bold;
 }
 </style>
