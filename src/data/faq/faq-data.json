@@ -87,7 +87,7 @@
               "• Consultant recommendations and searches",
               "• Co-investment opportunities"
             ],
-            "proof": "Use our Coverage Validator to see exactly which LPs we track for your strategy → [Check Coverage]"
+            "proof": "Contact us to learn more about our coverage for your specific strategy."
           }
         }
       ]
@@ -204,7 +204,7 @@
               "• **Confidence scoring:** We flag when we're uncertain",
               "• **User verification:** \"Report Issue\" button with rapid review"
             ],
-            "proof": "99.7% attribution accuracy in latest audit"
+            "proof": "Every alert includes references to the exact source for verification."
           }
         },
         {
@@ -219,7 +219,7 @@
               "• Not used to train models (unless you explicitly opt in)",
               "• Full audit trail of who sees what"
             ],
-            "proof": "Used by compliance teams at 15+ major funds. Zero compliance issues in 3 years of operation."
+            "proof": "For more details, read our [Terms of Use](https://osmosis.fm/terms)."
           }
         }
       ]
@@ -365,7 +365,7 @@
             "details": [
               "1. **15-minute preview** — We'll show you today's signals for your strategy",
               "2. **Free coverage check** — See exactly what we track for your focus areas",
-              "**Get started:** See allocator moves from this week → [View Live Signals]"
+              "Contact us to get started."
             ],
             "proof": "We're confident in our ROI math. If you can't see the value in 15 minutes, we'll tell you ourselves."
           }

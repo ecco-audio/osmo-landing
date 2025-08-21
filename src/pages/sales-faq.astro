@@ -32,12 +32,7 @@ import faqData from '../data/faq/faq-data.json';
         <!-- FAQ Sections -->
         {faqData.sections.map((section) => (
           <section class="faq-section" id={section.id}>
-            <div class="section-header-row">
-              <h2 class="section-title">{section.title}</h2>
-              <button class="expand-all-btn" onclick={`toggleAllInSection('${section.id}')`}>
-                Expand All
-              </button>
-            </div>
+            <h2 class="section-title">{section.title}</h2>
             <div class="section-questions">
               {section.questions.map((question) => (
                 <SimpleFaqAccordion question={question} sectionId={section.id} />
@@ -45,19 +40,6 @@ import faqData from '../data/faq/faq-data.json';
             </div>
           </section>
         ))}
-        
-        <!-- Contact CTA -->
-        <section class="faq-cta">
-          <div class="cta-content">
-            <h2 class="cta-title">Still have questions?</h2>
-            <p class="cta-description">
-              We're confident in our ROI math. If you can't see the value in 15 minutes, we'll tell you ourselves.
-            </p>
-            <a href="#contact" class="cta-button">
-              Get in Touch
-            </a>
-          </div>
-        </section>
       </div>
     </div>
   </main>
@@ -77,20 +59,7 @@ import faqData from '../data/faq/faq-data.json';
   
   <!-- JavaScript for interactive features -->
   <script>
-    // Expand/Collapse all functionality
-    function toggleAllInSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      const details = section.querySelectorAll('details');
-      const button = section.querySelector('.expand-all-btn');
-      
-      const allOpen = Array.from(details).every(detail => detail.open);
-      
-      details.forEach(detail => {
-        detail.open = !allOpen;
-      });
-      
-      button.textContent = allOpen ? 'Expand All' : 'Collapse All';
-    }
+    // Expand/Collapse functionality removed
 
     // Handle URL hash navigation
     function handleHashNavigation() {
@@ -117,9 +86,9 @@ import faqData from '../data/faq/faq-data.json';
 </FaqLayout>
 
 <style>
-/* FAQ Page Specific Styles */
+/* FAQ Page Specific Styles - 8pt Grid System */
 .content-header {
-  margin-bottom: var(--space-16);
+  margin-bottom: 64px; /* 8pt grid: 8×8 */
   text-align: center;
 }
 
@@ -128,7 +97,7 @@ import faqData from '../data/faq/faq-data.json';
   font-weight: 400;
   font-family: var(--font-heading);
   color: var(--text-primary);
-  margin-bottom: var(--space-4);
+  margin-bottom: 16px; /* 8pt grid: 8×2 */
   line-height: var(--leading-tight);
   letter-spacing: -0.02em;
 }
@@ -137,19 +106,19 @@ import faqData from '../data/faq/faq-data.json';
   font-size: 20px;
   color: var(--text-tertiary);
   line-height: var(--leading-normal);
-  margin-bottom: var(--space-8);
+  margin-bottom: 32px; /* 8pt grid: 8×4 */
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .faq-section {
-  margin-bottom: var(--space-20);
+  margin-bottom: 80px; /* 8pt grid: 8×10 */
   scroll-margin-top: 120px;
 }
 
 .faq-section:last-of-type {
-  margin-bottom: var(--space-24);
+  margin-bottom: 96px; /* 8pt grid: 8×12 */
 }
 
 .section-title {
@@ -157,18 +126,19 @@ import faqData from '../data/faq/faq-data.json';
   font-weight: 500;
   font-family: var(--font-heading);
   color: var(--text-primary);
-  margin-bottom: var(--space-8);
+  margin-bottom: 32px; /* 8pt grid: 8×4 */
   line-height: var(--leading-normal);
   letter-spacing: -0.01em;
   position: relative;
+  padding-top: 24px; /* 8pt grid: 8×3 - increased spacing before H2 */
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -12px;
+  bottom: -16px; /* 8pt grid: 8×2 - increased space so underline doesn't crowd */
   left: 0;
-  width: 40px;
+  width: 40px; /* 8pt grid: 8×5 */
   height: 2px;
   background: var(--brand-grad);
   border-radius: 1px;
@@ -177,8 +147,8 @@ import faqData from '../data/faq/faq-data.json';
 .section-questions {
   background: var(--bg-primary);
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-12);
-  padding: var(--space-6);
+  border-radius: 8px; /* 8pt grid - reduced border radius for enterprise feel */
+  padding: 24px; /* 8pt grid: 8×3 */
   box-shadow: var(--shadow-xs);
 }
 
@@ -270,10 +240,10 @@ import faqData from '../data/faq/faq-data.json';
   color: var(--text-muted);
 }
 
-/* Mobile Responsive */
+/* Mobile Responsive - 8pt Grid */
 @media (max-width: 768px) {
   .content-header {
-    margin-bottom: var(--space-12);
+    margin-bottom: 48px; /* 8pt grid: 8×6 */
     text-align: left;
   }
   
@@ -281,18 +251,23 @@ import faqData from '../data/faq/faq-data.json';
     text-align: left;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 24px; /* 8pt grid: 8×3 */
+  }
+  
+  .section-title {
+    padding-top: 16px; /* 8pt grid: 8×2 */
   }
   
   .faq-section {
-    margin-bottom: 56px;
+    margin-bottom: 56px; /* 8pt grid: 8×7 */
   }
   
   .section-questions {
-    padding: 16px;
+    padding: 16px; /* 8pt grid: 8×2 */
   }
   
   .faq-cta {
-    padding: 32px 24px;
+    padding: 32px 24px; /* 8pt grid: 8×4, 8×3 */
     text-align: left;
   }
   

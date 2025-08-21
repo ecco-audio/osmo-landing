@@ -244,6 +244,8 @@
 }
 
 .search-input {
+  width: 100%;
+  max-width: 480px; /* Increased from default to make it wider */
   height: 48px;
   background: #fff;
   border: 1px solid var(--border-light);
