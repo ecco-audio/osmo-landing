@@ -1,0 +1,218 @@
+---
+export interface Props {
+  sections: any[];
+  currentSection?: string;
+}
+
+const { sections, currentSection } = Astro.props;
+---
+
+<aside class="faq-sidebar" aria-label="FAQ Navigation">
+  <nav class="sidebar-nav">
+    <h2 class="sidebar-title">Contents</h2>
+    <ul class="sidebar-list">
+      {sections.map((section) => (
+        <li class="sidebar-section">
+          <a 
+            href={`#${section.id}`}
+            class={`sidebar-link ${currentSection === section.id ? 'active' : ''}`}
+            data-section={section.id}
+          >
+            <span class="sidebar-indicator"></span>
+            <span class="sidebar-text">{section.title}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</aside>
+
+<style>
+.faq-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.sidebar-nav {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-12);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.sidebar-title {
+  font-size: var(--text-micro);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+  font-family: var(--font-mono);
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 2px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  color: var(--text-tertiary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius-8);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.sidebar-indicator {
+  width: 3px;
+  height: 24px;
+  background: transparent;
+  margin-right: 12px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.sidebar-link:hover .sidebar-indicator {
+  background: var(--text-muted);
+}
+
+.sidebar-link.active {
+  color: var(--text-primary);
+  background: var(--brand-subtle);
+}
+
+.sidebar-link.active .sidebar-indicator {
+  background: var(--brand-grad);
+}
+
+/* Smooth scroll behavior */
+:global(html) {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 32px);
+}
+
+/* Custom scrollbar for sidebar */
+.faq-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.faq-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.faq-sidebar::-webkit-scrollbar-thumb {
+  background: var(--hairline);
+  border-radius: 2px;
+}
+
+/* Mobile hidden - handled in main layout */
+@media (max-width: 1024px) {
+  .faq-sidebar {
+    display: none;
+  }
+}
+</style>
+
+<script>
+// Add active state tracking on scroll
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.sidebar-link');
+  const sections = document.querySelectorAll('.faq-section');
+  
+  // Intersection Observer for active section
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        links.forEach(link => {
+          if (link.getAttribute('data-section') === id) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: '-100px 0px -70% 0px',
+    threshold: 0
+  });
+  
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+  
+  // Smooth scroll with offset
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        const offset = 120; // Header height + padding
+        const targetPosition = targetSection.offsetTop - offset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Update URL without triggering scroll
+        history.pushState(null, null, `#${targetId}`);
+      }
+    });
+  });
+  
+  // Keyboard navigation
+  let currentIndex = 0;
+  
+  document.addEventListener('keydown', (e) => {
+    if (!e.target.closest('.faq-sidebar')) return;
+    
+    switch(e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        currentIndex = Math.min(currentIndex + 1, links.length - 1);
+        links[currentIndex].focus();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        currentIndex = Math.max(currentIndex - 1, 0);
+        links[currentIndex].focus();
+        break;
+      case 'Home':
+        e.preventDefault();
+        currentIndex = 0;
+        links[currentIndex].focus();
+        break;
+      case 'End':
+        e.preventDefault();
+        currentIndex = links.length - 1;
+        links[currentIndex].focus();
+        break;
+    }
+  });
+});
+</script>

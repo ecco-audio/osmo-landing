@@ -1,0 +1,166 @@
+/* FAQ Design Tokens - Premium & Clean */
+:root {
+  /* Text colors - clean hierarchy */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-tertiary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Background colors - clean white */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --bg-accent: #f8fafc;
+  
+  /* Brand colors */
+  --brand-grad: linear-gradient(90deg, #1A2FFB 0%, #44B0FF 50%, #7EE0FF 100%);
+  --brand-primary: #2A60F8;
+  --brand-secondary: #44B0FF;
+  --brand-light: #e6f1ff;
+  --brand-subtle: #f0f7ff;
+  
+  /* Borders and lines */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  --border-strong: #9ca3af;
+  
+  /* Shadows - subtle depth */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  /* Layout */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-heading: "IBM Plex Sans Condensed", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  
+  /* Type scale */
+  --text-h1: 48px;
+  --text-h2: 32px;
+  --text-h3: 24px;
+  --text-h4: 20px;
+  --text-body: 18px;
+  --text-small: 14px;
+  --text-micro: 12px;
+  
+  /* Line heights */
+  --leading-tight: 1.15;
+  --leading-normal: 1.25;
+  --leading-relaxed: 1.7;
+  
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  
+  /* Layout specific */
+  --container-max: 1240px;
+  --sidebar-width: 280px;
+  --content-max: 760px;
+  --header-height: 96px;
+}
+
+/* Clean light theme base */
+.faq-page {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  line-height: var(--leading-relaxed);
+  min-height: 100vh;
+}
+
+/* Responsive type scale */
+@media (max-width: 768px) {
+  :root {
+    --text-h1: 36px;
+    --text-h2: 28px;
+    --text-h3: 20px;
+    --text-body: 16px;
+  }
+}
+
+/* Utility classes for clean design */
+.border-light {
+  border: 1px solid var(--border-light);
+}
+
+.card-subtle {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-xs);
+}
+
+.card-elevated {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-16);
+  box-shadow: var(--shadow-sm);
+}
+
+.gradient-text {
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.brand-accent {
+  background: var(--brand-subtle);
+  border-left: 3px solid var(--brand-primary);
+}
+
+/* Focus states */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom scrollbar for clean look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-strong);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-medium) var(--bg-secondary);
+}

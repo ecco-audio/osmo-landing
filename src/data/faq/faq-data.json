@@ -1,0 +1,451 @@
+{
+  "sections": [
+    {
+      "id": "problem-we-solve",
+      "title": "The Problem We Solve",
+      "icon": "target",
+      "questions": [
+        {
+          "id": "what-problem",
+          "question": "What problem does Osmosis solve?",
+          "answer": {
+            "summary": "Allocator decisions are spoken in meetings before they appear in databases.",
+            "details": [
+              "Osmosis listens to those public conversations in real-time and turns them into predictive alerts—so you're first in the room with the right angle.",
+              "One $100M mandate at ~1% fees = ~$5M over five years. That's 1,000× our annual cost.",
+              "Our users regularly source $100M+ opportunities and see ~20% presentation hit rates (vs. ~5% industry norm)."
+            ],
+            "proof": "While your competitors are reading last month's minutes, you're referencing yesterday's IC discussion."
+          }
+        }
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "title": "How It Works",
+      "icon": "clock",
+      "questions": [
+        {
+          "id": "day-in-life",
+          "question": "Day in the Life — From alert to mandate",
+          "answer": {
+            "summary": "See exactly how Osmosis transforms a morning alert into a closed mandate.",
+            "timeline": [
+              {
+                "time": "8:30 AM",
+                "event": "Email alert: Texas Teachers IC discussing increased private credit pacing from 5% to 8%.",
+                "details": ["Includes video clip + exact timestamp", "Shows who said it (CIO vs consultant vs staff)"]
+              },
+              {
+                "time": "8:45 AM",
+                "event": "Check relationship map",
+                "details": ["IC chair: Former Goldman, knows your senior partner", "Consultant: Aksia, recently recommended similar strategy", "Staff PM: Published paper on credit diversification"]
+              },
+              {
+                "time": "9:00 AM",
+                "event": "Execute with our talk track",
+                "details": ["Reference exact quote from meeting", "Align pitch to stated constraints", "Loop in partner who knows IC chair"]
+              }
+            ],
+            "results": {
+              "week2": "Meeting booked (they're impressed you knew their timeline)",
+              "month3": "RFP issued; you're already in dialogue",
+              "month6": "Presentation scheduled as 'Allocator-Sourced (Osmosis)' in CRM"
+            },
+            "proof": "20% hit rate vs. 5% industry average"
+          }
+        }
+      ]
+    },
+    {
+      "id": "core-questions",
+      "title": "Core Questions",
+      "icon": "users",
+      "questions": [
+        {
+          "id": "who-is-for",
+          "question": "Who is Osmosis for?",
+          "answer": {
+            "summary": "Heads of IR/Distribution at asset managers ($100M+ AUM) who are tired of learning about mandates from consultant memos.",
+            "segments": {
+              "power_users": [
+                "Relationship managers hunting for warm leads",
+                "PMs who want to know who's actually deploying capital",
+                "RevOps teams who operationalize signals into pipeline"
+              ],
+              "ready_indicators": [
+                "You find out about mandates after competitors have pitched",
+                "Your team works from static databases, not live signals",
+                "Your presentation hit rate is stuck at 5-10%",
+                "You're losing to firms that 'somehow knew' about opportunities first"
+              ]
+            }
+          }
+        },
+        {
+          "id": "one-sentence",
+          "question": "What is Osmosis in one sentence?",
+          "answer": {
+            "summary": "Osmosis monitors public allocator meetings in real-time, using AI to extract who's allocating, what they said, and who influences decisions—then delivers personalized alerts with exact quotes and relationship maps to your team within hours, not months."
+          }
+        },
+        {
+          "id": "asset-classes",
+          "question": "What strategies and asset classes do you cover?",
+          "answer": {
+            "summary": "Full coverage across all alternative asset classes.",
+            "coverage": [
+              "Private Equity",
+              "Venture Capital", 
+              "Private Credit",
+              "Real Estate",
+              "Infrastructure",
+              "Natural Resources",
+              "Hedge Funds (all strategies)"
+            ],
+            "allocation_types": [
+              "New commitments and re-ups",
+              "Pacing changes and strategic shifts",
+              "Manager graduations and emerging manager programs",
+              "Consultant recommendations and searches",
+              "Co-investment opportunities"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "speed-differentiation",
+      "title": "Speed & Differentiation",
+      "icon": "zap",
+      "questions": [
+        {
+          "id": "why-realtime",
+          "question": "Why is 'real-time' better than comprehensive databases?",
+          "answer": {
+            "summary": "Databases are libraries. Osmosis is radar.",
+            "comparison": {
+              "databases": "Great for looking up last year's commitments",
+              "osmosis": "Great for knowing who's committing next quarter"
+            },
+            "example": {
+              "monday": "Oregon IC discusses increasing PE allocation",
+              "monday_pm": "Osmosis alert to relevant managers",
+              "tuesday": "First movers scheduling calls",
+              "week3": "RFP released",
+              "week6": "Database updates show 'considering PE increase'"
+            },
+            "outcome": {
+              "before": "Read about mandates → Chase RFPs → 5% hit rate",
+              "after": "Hear signals → Call first → 20% hit rate"
+            }
+          }
+        },
+        {
+          "id": "vs-databases",
+          "question": "We already have Preqin/PitchBook—why add Osmosis?",
+          "answer": {
+            "summary": "Keep them for history. Add Osmosis for what happens next.",
+            "keep_them_for": [
+              "Historical commitments and benchmarks",
+              "Contact information and fund performance",
+              "Quarterly reports and analysis"
+            ],
+            "add_osmosis_for": {
+              "preqin": "Tells you who manages $10B → Osmosis tells you who's deploying $500M next quarter",
+              "pitchbook": "Shows you contact info → Osmosis shows you what that contact said yesterday",
+              "dakota": "Lists consultant relationships → Osmosis alerts when consultants recommend your strategy"
+            },
+            "proof": "Databases ≠ signals. Use both. Osmosis makes your databases more valuable by telling you who to look up and when to call."
+          }
+        },
+        {
+          "id": "competitors-using",
+          "question": "What if my competitors are already using Osmosis?",
+          "answer": {
+            "summary": "Speed matters, but execution matters more.",
+            "details": [
+              "Osmosis tells everyone the same facts—your differentiation is what you do with them.",
+              "We see teams using Osmosis consistently outperform those who don't, even when both have access.",
+              "Why? Because most firms still take weeks to act on intelligence. If you can move in days, you win."
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "coverage-sources",
+      "title": "Coverage & Sources",
+      "icon": "globe",
+      "questions": [
+        {
+          "id": "signal-sources",
+          "question": "Where do signals come from?",
+          "answer": {
+            "summary": "100% public information, 0% MNPI.",
+            "what_we_capture": [
+              "Public pension board and investment committee meetings (live + same-day video)",
+              "CIO and staff interviews in public forums",
+              "Consultant presentations at public sessions",
+              "Public filings and documents tied to allocation decisions"
+            ],
+            "coverage_scope": {
+              "plans": "360+ US public plans monitored continuously",
+              "meetings": "4,000+ meetings per year captured",
+              "global": "Any allocator speaking publicly worldwide"
+            },
+            "never_capture": [
+              "Closed-door sessions",
+              "Material non-public information (MNPI)",
+              "Embargoed or privileged materials"
+            ],
+            "proof": "Every insight links to its public source for verification."
+          }
+        },
+        {
+          "id": "international",
+          "question": "What about international, endowments, foundations, and family offices?",
+          "answer": {
+            "summary": "Comprehensive US public plan coverage + any allocator speaking publicly worldwide.",
+            "breakdown": {
+              "endowments": "Captured when they publish meetings or speak at conferences",
+              "sovereign": "Covered when they release reports or officials speak publicly",
+              "family_offices": "Limited to public statements (rare but included when available)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "accuracy-compliance",
+      "title": "Accuracy & Compliance",
+      "icon": "shield",
+      "questions": [
+        {
+          "id": "prevent-hallucinations",
+          "question": "How do you ensure accuracy and prevent AI hallucinations?",
+          "answer": {
+            "summary": "Every alert includes references to the exact source. No hallucinations, just facts with receipts.",
+            "quality_measures": [
+              "Speaker attribution: We know who said it (CIO vs consultant vs trustee)",
+              "Source links: Click through to exact timestamp or document page",
+              "Confidence scoring: We flag when we're uncertain",
+              "User verification: 'Report Issue' button with rapid review"
+            ],
+            "proof": "99.7% attribution accuracy in latest audit"
+          }
+        },
+        {
+          "id": "mnpi-handling",
+          "question": "Do you handle MNPI? How is customer data treated?",
+          "answer": {
+            "summary": "No MNPI—ever. We only process publicly available information.",
+            "data_policy": [
+              "Customer watchlists and notes are ring-fenced",
+              "Never shared between clients",
+              "Not used to train models (unless you explicitly opt in)",
+              "Full audit trail of who sees what"
+            ],
+            "proof": "Used by compliance teams at 15+ major funds. Zero compliance issues in 3 years of operation."
+          }
+        }
+      ]
+    },
+    {
+      "id": "implementation",
+      "title": "Implementation & Integration",
+      "icon": "settings",
+      "questions": [
+        {
+          "id": "onboarding-speed",
+          "question": "How fast is onboarding?",
+          "answer": {
+            "summary": "Under 2 minutes. Accept invite → AI builds your watchlist → alerts start flowing.",
+            "timeline": {
+              "minute_2": "Setup complete",
+              "hour_1": "First relevant alerts arrive",
+              "day_1": "Team trained on signal interpretation",
+              "week_1": "First meeting booked from signal",
+              "week_2_4": "Measurable pipeline impact"
+            },
+            "proof": "No engineering required. No IT tickets. No data migration. Just results."
+          }
+        },
+        {
+          "id": "integrations",
+          "question": "What integrations do you support?",
+          "answer": {
+            "summary": "Instant email alerts, web app, and CRM integration in 1 hour.",
+            "instant": [
+              "Email alerts with source links",
+              "Web app with search and filters"
+            ],
+            "crm_integration": {
+              "platforms": ["Salesforce", "HubSpot", "Other CRMs via CSV/webhook"],
+              "data_pushed": [
+                "Allocator name and strategy interest",
+                "Signal type (pacing change, new search, consultant rec)",
+                "Exact quote with source link",
+                "Suggested talk track",
+                "Relationship map"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "roi-pricing",
+      "title": "ROI & Pricing",
+      "icon": "dollar",
+      "questions": [
+        {
+          "id": "justify-cost",
+          "question": "How do you justify the cost?",
+          "answer": {
+            "summary": "One mandate pays for 1,000 years of Osmosis.",
+            "math": {
+              "mandate_value": "~$5M over 5 years",
+              "roi": "100× on one win, 1,000× if you win 10"
+            },
+            "customer_quotes": [
+              "Paid for itself in the first month",
+              "One meeting covers the annual cost",
+              "Should be 10× the price based on value"
+            ],
+            "proof": "Scaled by team size, not AUM. Everyone from emerging managers to $100B platforms can access the same intelligence."
+          }
+        },
+        {
+          "id": "maturity-model",
+          "question": "What's your maturity model? How do I know if we'll succeed?",
+          "answer": {
+            "summary": "If you're Level 1 or 2, Osmosis can 3× your speed to market.",
+            "levels": [
+              {
+                "level": 1,
+                "name": "Reactive (Industry norm)",
+                "indicators": ["Learn about mandates from RFPs or news", "~5% presentation hit rate", "18-month fundraising cycles"]
+              },
+              {
+                "level": 2,
+                "name": "Aware",
+                "indicators": ["Manually check meeting minutes", "~7-10% hit rate", "Some proactive outreach"]
+              },
+              {
+                "level": 3,
+                "name": "Proactive (Osmosis users after 30 days)",
+                "indicators": ["Alerts drive daily priorities", "~12-15% hit rate", "Faster qualification"]
+              },
+              {
+                "level": 4,
+                "name": "Predictive (Osmosis power users)",
+                "indicators": ["Signals auto-route with talk tracks", "~20%+ hit rate"]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "competitive-intel",
+      "title": "Competitive Intelligence",
+      "icon": "eye",
+      "questions": [
+        {
+          "id": "see-competitors",
+          "question": "Can I see what my competitors are doing?",
+          "answer": {
+            "summary": "Yes, when they present in public.",
+            "what_you_see": [
+              "Who else presented at recent board meetings",
+              "Which managers consultants are recommending",
+              "What strategies are gaining/losing favor",
+              "When competitors get mentioned in meetings"
+            ],
+            "what_you_dont": "Private interactions, closed-door discussions, or anything that wasn't said publicly",
+            "proof": "You'll know the competitive landscape before the RFP drops, not after."
+          }
+        }
+      ]
+    },
+    {
+      "id": "proof-validation",
+      "title": "Proof & Validation",
+      "icon": "check",
+      "questions": [
+        {
+          "id": "proof-share",
+          "question": "What proof can you share?",
+          "answer": {
+            "summary": "Real metrics from real usage.",
+            "metrics": {
+              "meetings": "4,000+ allocator meetings monitored yearly",
+              "plans": "360+ public plans tracked continuously",
+              "opportunities": "160+ opportunities surfaced monthly",
+              "signals": "47 signals generated this week alone"
+            },
+            "testimonial": {
+              "quote": "I've sourced two $100M+ opportunities from Osmosis in the past month.",
+              "author": "Aaron, Relationship Manager",
+              "company": "$30B Hedge Fund"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "security-compliance",
+      "title": "Security & Compliance",
+      "icon": "lock",
+      "questions": [
+        {
+          "id": "security-details",
+          "question": "What's your security posture?",
+          "answer": {
+            "summary": "Enterprise-grade security with full compliance framework.",
+            "security": [
+              "Encryption in transit and at rest",
+              "Role-based access control with SSO",
+              "Full audit logging",
+              "Annual penetration testing"
+            ],
+            "compliance": [
+              "Public information only (no MNPI)",
+              "Source verification for every signal",
+              "Customer data segregation",
+              "GDPR/CCPA compliant",
+              "SEC marketing rule aligned"
+            ],
+            "documentation": [
+              "Security overview",
+              "DPA execution",
+              "Technical controls checklist",
+              "Vendor assessment questionnaire"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "next-steps",
+      "title": "Next Steps",
+      "icon": "arrow-right",
+      "questions": [
+        {
+          "id": "get-started",
+          "question": "What's next if we're interested?",
+          "answer": {
+            "summary": "Three ways to see value immediately.",
+            "options": [
+              "15-minute preview — We'll show you today's signals for your strategy",
+              "Free coverage check — See exactly what we track for your focus areas",
+              "Live signals — See allocator moves from this week"
+            ],
+            "proof": "We're confident in our ROI math. If you can't see the value in 15 minutes, we'll tell you ourselves."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+---
+import FaqLayout from '../layouts/FaqLayout.astro';
+import FaqHeader from '../components/FaqHeader.astro';
+import FaqSidebar from '../components/FaqSidebar.astro';
+import SimpleFaqAccordion from '../components/SimpleFaqAccordion.astro';
+import FaqSearch from '../components/FaqSearch.astro';
+import FaqSchema from '../components/FaqSchema.astro';
+import faqData from '../data/faq/faq-data.json';
+---
+
+<FaqLayout title="Sales FAQ - Osmosis" description="Frequently asked questions about Osmosis - Real-Time Allocator Intelligence">
+  <FaqSchema faqData={faqData} />
+  
+  <FaqHeader />
+  
+  <main class="faq-container">
+    <div class="faq-grid">
+      <!-- Sidebar Navigation -->
+      <FaqSidebar sections={faqData.sections} />
+      
+      <!-- Main Content -->
+      <div class="faq-content">
+        <!-- Header -->
+        <header class="content-header">
+          <h1 class="faq-title">Sales FAQ</h1>
+          <p class="faq-subtitle">
+            Get answers to common questions about Osmosis - Real-Time Allocator Intelligence for asset managers
+          </p>
+          <FaqSearch />
+        </header>
+        
+        <!-- FAQ Sections -->
+        {faqData.sections.map((section) => (
+          <section class="faq-section" id={section.id}>
+            <h2 class="section-title">{section.title}</h2>
+            <div class="section-questions">
+              {section.questions.map((question) => (
+                <SimpleFaqAccordion question={question} sectionId={section.id} />
+              ))}
+            </div>
+          </section>
+        ))}
+        
+        <!-- Contact CTA -->
+        <section class="faq-cta">
+          <div class="cta-content">
+            <h2 class="cta-title">Still have questions?</h2>
+            <p class="cta-description">
+              We're confident in our ROI math. If you can't see the value in 15 minutes, we'll tell you ourselves.
+            </p>
+            <a href="#contact" class="cta-button">
+              Get in Touch
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Simple Footer -->
+  <footer class="faq-footer">
+    <div class="footer-container">
+      <p class="footer-text">
+        Still have questions? 
+        <a href="mailto:team@osmosis.fm" class="footer-link">Get in touch</a>
+      </p>
+      <p class="footer-copyright">
+        © 2025 Osmosis. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</FaqLayout>
+
+<style>
+/* FAQ Page Specific Styles */
+.content-header {
+  margin-bottom: var(--space-16);
+  text-align: center;
+}
+
+.faq-title {
+  font-size: var(--text-h1);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+.faq-subtitle {
+  font-size: 20px;
+  color: var(--text-tertiary);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-8);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-section {
+  margin-bottom: var(--space-20);
+  scroll-margin-top: 120px;
+}
+
+.faq-section:last-of-type {
+  margin-bottom: var(--space-24);
+}
+
+.section-title {
+  font-size: var(--text-h2);
+  font-weight: 500;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  margin-bottom: var(--space-8);
+  line-height: var(--leading-normal);
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--brand-grad);
+  border-radius: 1px;
+}
+
+.section-questions {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-12);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-xs);
+}
+
+/* CTA Section */
+.faq-cta {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-16);
+  padding: var(--space-12);
+  text-align: center;
+  margin-top: var(--space-20);
+  box-shadow: var(--shadow-sm);
+}
+
+.cta-title {
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-heading);
+}
+
+.cta-description {
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-8);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--leading-relaxed);
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  background: var(--brand-grad);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-12);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  filter: brightness(1.05);
+}
+
+/* Footer styles */
+.faq-footer {
+  margin-top: var(--space-24);
+  padding: var(--space-8) 0;
+  border-top: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+}
+
+.footer-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  text-align: center;
+}
+
+.footer-text {
+  font-size: var(--text-small);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+.footer-link {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: var(--text-micro);
+  color: var(--text-muted);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .content-header {
+    margin-bottom: var(--space-12);
+    text-align: left;
+  }
+  
+  .faq-subtitle {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .faq-section {
+    margin-bottom: 56px;
+  }
+  
+  .section-questions {
+    padding: 16px;
+  }
+  
+  .faq-cta {
+    padding: 32px 24px;
+    text-align: left;
+  }
+  
+  .cta-description {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .cta-button {
+    width: 100%;
+  }
+}
+
+/* High contrast focus states for accessibility */
+@media (prefers-contrast: high) {
+  .section-title::after {
+    background: var(--ink-900);
+  }
+  
+  .cta-button {
+    border: 2px solid var(--ink-900);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Print styles */
+@media print {
+  .faq-sidebar,
+  .faq-search,
+  .cta-button {
+    display: none;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-item[open] {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .faq-item summary {
+    color: black;
+  }
+  
+  .answer {
+    color: black;
+  }
+}
+</style>

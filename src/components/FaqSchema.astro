@@ -1,0 +1,106 @@
+---
+export interface Props {
+  faqData: any;
+}
+
+const { faqData } = Astro.props;
+
+// Generate FAQ schema from data
+function generateFAQSchema(data: any) {
+  const mainEntity = [];
+  
+  data.sections.forEach((section: any) => {
+    section.questions.forEach((question: any) => {
+      // Extract text content from answer object
+      let answerText = '';
+      
+      if (question.answer.summary) {
+        answerText += question.answer.summary + ' ';
+      }
+      
+      if (question.answer.details && Array.isArray(question.answer.details)) {
+        answerText += question.answer.details.join(' ') + ' ';
+      }
+      
+      if (question.answer.proof) {
+        answerText += question.answer.proof;
+      }
+      
+      // Clean up and limit length for schema
+      answerText = answerText.trim().substring(0, 500);
+      
+      mainEntity.push({
+        "@type": "Question",
+        "name": question.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": answerText
+        }
+      });
+    });
+  });
+  
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": mainEntity
+  };
+}
+
+const schema = generateFAQSchema(faqData);
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema, null, 2)} />
+
+<!-- Additional SEO meta tags -->
+<meta name="keywords" content="osmosis, allocator intelligence, LP meetings, asset manager sales, pension fund tracking, private equity marketing, alternative investments, CRM integration" />
+<meta name="author" content="Osmosis" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sales FAQ - Osmosis" />
+<meta property="og:description" content="Get answers to common questions about Osmosis - Real-Time Allocator Intelligence for asset managers." />
+<meta property="og:url" content="https://osmosis.fm/sales-faq" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Sales FAQ - Osmosis" />
+<meta name="twitter:description" content="Get answers to common questions about Osmosis - Real-Time Allocator Intelligence for asset managers." />
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://osmosis.fm/sales-faq" />
+
+<!-- Breadcrumbs schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://osmosis.fm"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Sales FAQ",
+      "item": "https://osmosis.fm/sales-faq"
+    }
+  ]
+}
+</script>
+
+<!-- Organization schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Osmosis",
+  "description": "Real-Time Allocator Intelligence for asset managers",
+  "url": "https://osmosis.fm",
+  "logo": "https://osmosis.fm/img/Osmosis-logo-400.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "url": "https://osmosis.fm/sales-faq"
+  }
+}
+</script>
