@@ -45,6 +45,7 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include',
         body: JSON.stringify({
           email: formData.email,
           form_type: 'landing',
