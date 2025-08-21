@@ -9,9 +9,14 @@ const { question, sectionId } = Astro.props;
 
 <details class="faq-item" id={`${sectionId}-${question.id}`}>
   <summary class="faq-summary">
-    <h3 class="faq-question">{question.question}</h3>
+    <h3 class="faq-question">
+      {question.question}
+      <button class="question-permalink" onclick={`navigator.clipboard.writeText(window.location.origin + window.location.pathname + '#${sectionId}-${question.id}'); this.textContent = '✓ Copied!'; setTimeout(() => this.textContent = '#', 2000)`}>
+        #
+      </button>
+    </h3>
     <svg class="faq-caret" width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </summary>
   <div class="faq-answer">
@@ -34,137 +39,17 @@ const { question, sectionId } = Astro.props;
 </details>
 
 <style>
-.faq-item {
-  border-top: 1px solid var(--border-light);
-  padding: var(--space-6) 0;
-  transition: all 0.2s ease;
-}
-
-.faq-item:first-child {
-  border-top: none;
-}
-
-.faq-summary {
-  list-style: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--space-2) 0;
-  user-select: none;
-}
-
+/* Remove webkit marker */
 .faq-summary::-webkit-details-marker {
   display: none;
 }
 
+/* Question container for permalink */
 .faq-question {
-  font-size: var(--text-h4);
-  font-weight: 500;
-  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
   margin: 0;
-  line-height: 1.4;
-  font-family: var(--font-body);
-}
-
-.faq-summary:hover .faq-question {
-  color: var(--brand-primary);
-}
-
-.faq-caret {
-  flex-shrink: 0;
-  color: var(--text-muted);
-  transition: transform 0.2s ease;
-}
-
-.faq-item[open] .faq-caret {
-  transform: rotate(180deg);
-}
-
-.faq-item[open] {
-  background: var(--bg-secondary);
-  border-radius: var(--radius-12);
-  padding: var(--space-6);
-  margin: 0 calc(-1 * var(--space-6));
-  border: 1px solid var(--border-light);
-}
-
-.faq-answer {
-  margin-top: var(--space-4);
-  color: var(--text-secondary);
-  font-size: var(--text-body);
-  line-height: var(--leading-relaxed);
-}
-
-.answer-summary {
-  font-size: 18px;
-  color: var(--text-primary);
-  margin-bottom: var(--space-4);
-}
-
-.answer-list {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-4) 0;
-}
-
-.answer-list li {
-  position: relative;
-  padding-left: var(--space-6);
-  margin-bottom: var(--space-2);
-}
-
-.answer-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--brand-primary);
-}
-
-.answer-proof {
-  margin-top: var(--space-4);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border-light);
-  font-weight: 600;
-  color: var(--brand-primary);
-}
-
-/* Focus states for accessibility */
-.faq-summary:focus-visible {
-  outline: 2px solid var(--brand-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-8);
-}
-
-/* Animation for smooth open/close */
-.faq-item[open] .faq-answer {
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .faq-question {
-    font-size: 18px;
-  }
-  
-  .faq-answer {
-    font-size: 16px;
-  }
-  
-  .faq-item[open] {
-    padding: var(--space-4);
-    margin: 0 calc(-1 * var(--space-4));
-  }
 }
 </style>

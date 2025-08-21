@@ -32,7 +32,12 @@ import faqData from '../data/faq/faq-data.json';
         <!-- FAQ Sections -->
         {faqData.sections.map((section) => (
           <section class="faq-section" id={section.id}>
-            <h2 class="section-title">{section.title}</h2>
+            <div class="section-header-row">
+              <h2 class="section-title">{section.title}</h2>
+              <button class="expand-all-btn" onclick={`toggleAllInSection('${section.id}')`}>
+                Expand All
+              </button>
+            </div>
             <div class="section-questions">
               {section.questions.map((question) => (
                 <SimpleFaqAccordion question={question} sectionId={section.id} />
@@ -69,6 +74,46 @@ import faqData from '../data/faq/faq-data.json';
       </p>
     </div>
   </footer>
+  
+  <!-- JavaScript for interactive features -->
+  <script>
+    // Expand/Collapse all functionality
+    function toggleAllInSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const details = section.querySelectorAll('details');
+      const button = section.querySelector('.expand-all-btn');
+      
+      const allOpen = Array.from(details).every(detail => detail.open);
+      
+      details.forEach(detail => {
+        detail.open = !allOpen;
+      });
+      
+      button.textContent = allOpen ? 'Expand All' : 'Collapse All';
+    }
+
+    // Handle URL hash navigation
+    function handleHashNavigation() {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.getElementById(hash.substring(1));
+        if (element && element.tagName === 'DETAILS') {
+          element.open = true;
+          setTimeout(() => {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            element.classList.add('target-pulse');
+            setTimeout(() => element.classList.remove('target-pulse'), 600);
+          }, 100);
+        }
+      }
+    }
+
+    // Run on page load
+    document.addEventListener('DOMContentLoaded', handleHashNavigation);
+    
+    // Run on hash change (for single page navigation)
+    window.addEventListener('hashchange', handleHashNavigation);
+  </script>
 </FaqLayout>
 
 <style>

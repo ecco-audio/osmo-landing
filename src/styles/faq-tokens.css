@@ -1,14 +1,19 @@
 /* FAQ Design Tokens - Premium & Clean */
 :root {
-  /* Text colors - clean hierarchy */
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
+  /* Inherit from globals.css where applicable */
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-heading: "IBM Plex Sans Condensed", system-ui, sans-serif;
+  
+  /* Text colors - use existing ink scale from globals */
+  --text-primary: #0F1226; /* var(--ink-900) */
+  --text-secondary: #30364D; /* var(--ink-700) */
   --text-tertiary: #6b7280;
   --text-muted: #9ca3af;
   
   /* Background colors - clean white */
   --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
+  --bg-secondary: #F9FAFB; /* var(--surface-50) */
   --bg-tertiary: #f3f4f6;
   --bg-accent: #f8fafc;
   
