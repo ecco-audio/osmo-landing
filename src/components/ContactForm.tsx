@@ -40,7 +40,7 @@ export default function ContactForm() {
       : 'https://osmosis.fm'
     
     try {
-      const response = await fetch(`${apiBase}/api/sales/submit`, {
+      const response = await fetch(`${apiBase}/v2/sales/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
