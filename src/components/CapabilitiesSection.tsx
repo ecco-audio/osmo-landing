@@ -224,7 +224,7 @@ export default function CapabilitiesSection() {
 
                 {/* Tertiary text link */}
                 <motion.a
-                  href="#contact"
+                  href={currentItem.ctaUrl || "#contact"}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 0.8 }}
                   transition={{ delay: 0.2 }}

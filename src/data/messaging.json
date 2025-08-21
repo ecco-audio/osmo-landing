@@ -162,7 +162,8 @@
               "benefit": "Prioritize allocators deploying now.",
               "action": "Route to owner; outreach this week.",
               "chips": ["Alerts in hours", "160 opps/month", "Source-linked"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             },
             {
               "id": "benchmarks",
@@ -171,7 +172,8 @@
               "benefit": "See who else is pitching; sharpen the angle.",
               "action": "Sequence to avoid overlap.",
               "chips": ["Live mentions", "Strategy context", "3P → 20% hit rate"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             },
             {
               "id": "quotes",
@@ -180,7 +182,8 @@
               "benefit": "Open with their own words.",
               "action": "Reference the quote; propose next step.",
               "chips": ["Speaker-tied", "Source links", "Copy-ready line"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             },
             {
               "id": "mapping",
@@ -189,7 +192,8 @@
               "benefit": "Work the real influence chain.",
               "action": "Engage influencers; align timing.",
               "chips": ["Influence graph", "Plan + consultant", "Role aware"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             },
             {
               "id": "workflow",
@@ -198,7 +202,8 @@
               "benefit": "Auto-route intel; no drop-offs.",
               "action": "Assign to PM/coverage.",
               "chips": ["Email delivery", "CRM coming soon", "Audit trail"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             },
             {
               "id": "prep",
@@ -207,7 +212,8 @@
               "benefit": "Walk in pre-briefed—in minutes.",
               "action": "Download; brief the team.",
               "chips": ["Speaker quotes", "Plan context", "Next best action"],
-              "ctaText": "See a live alert"
+              "ctaText": "See a live alert",
+              "ctaUrl": "https://solutions.osmosis.fm"
             }
           ]
         }

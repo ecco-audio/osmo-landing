@@ -46,7 +46,7 @@ export default function Navigation() {
                 SOLUTIONS
               </a>
               <a
-                href="/sales-faq"
+                href="/osmosis-faq"
                 className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase"
                 style={{
                   fontSize: '12px',
@@ -59,7 +59,7 @@ export default function Navigation() {
                   if (typeof window !== 'undefined' && (window as any).posthog) {
                     (window as any).posthog.capture('nav_clicked', {
                       nav_item: 'faq',
-                      destination_url: '/sales-faq',
+                      destination_url: '/osmosis-faq',
                       is_authenticated: isAuthenticated
                     })
                   }
@@ -93,7 +93,7 @@ export default function Navigation() {
               SOLUTIONS
             </a>
             <a
-              href="/sales-faq"
+              href="/osmosis-faq"
               className="font-mono font-normal hover:text-secondary tracking-wider transition-colors uppercase text-xs"
               style={{
                 color: 'rgb(244, 243, 239)',
@@ -104,7 +104,7 @@ export default function Navigation() {
                 if (typeof window !== 'undefined' && (window as any).posthog) {
                   (window as any).posthog.capture('nav_clicked', {
                     nav_item: 'faq',
-                    destination_url: '/sales-faq',
+                    destination_url: '/osmosis-faq',
                     is_authenticated: isAuthenticated
                   })
                 }

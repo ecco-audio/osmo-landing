@@ -1,0 +1,356 @@
+# **Osmosis FAQ — Real-Time Allocator Intelligence**
+
+## **The Problem We Solve**
+
+### **What problem does Osmosis solve?**
+
+**Short answer:** Allocator decisions are spoken in meetings before they appear in databases. Osmosis listens to those public conversations in real-time and turns them into predictive alerts—so you're first in the room with the right angle.
+
+**The math:** One $100M mandate at \~1% fees \= \~$5M over five years. That's 1,000× our annual cost. Our users regularly source $100M+ opportunities and see \~20% presentation hit rates (vs. \~5% industry norm).
+
+**The difference:** While your competitors are reading last month's minutes, you're referencing yesterday's IC discussion.
+
+---
+
+## **How It Works in Practice**
+
+### **"Day in the Life" — From alert to mandate**
+
+**8:30 AM** — Email alert: "Texas Teachers IC discussing increased private credit pacing from 5% to 8%. CIO wants options by next meeting."
+
+* Includes video clip \+ exact timestamp  
+* Shows who said it (CIO vs consultant vs staff)
+
+**8:45 AM** — Check relationship map:
+
+* IC chair: Former Goldman, knows your senior partner  
+* Consultant: Aksia, recently recommended similar strategy  
+* Staff PM: Published paper on credit diversification
+
+**9:00 AM** — Execute with our talk track:
+
+* Reference exact quote from meeting  
+* Align pitch to stated constraints  
+* Loop in partner who knows IC chair
+
+**Week 2** — Meeting booked (they're impressed you knew their timeline)
+
+**Month 3** — RFP issued; you're already in dialogue
+
+---
+
+## **Core Questions**
+
+### **Who is Osmosis for?**
+
+**Primary buyers:** Heads of IR/Distribution at asset managers ($100M+ AUM) who are tired of learning about mandates from consultant memos.
+
+**Power users:**
+
+* Relationship managers hunting for warm leads  
+* PMs who want to know who's actually deploying capital  
+* RevOps teams who operationalize signals into pipeline
+
+**You're ready for Osmosis if:**
+
+* ✓ You find out about mandates after competitors have pitched  
+* ✓ Your team works from static databases, not live signals  
+* ✓ Your presentation hit rate is stuck at 5-10%  
+* ✓ You're losing to firms that "somehow knew" about opportunities first
+
+### **What is Osmosis in one sentence?**
+
+Osmosis monitors public allocator meetings in real-time, using AI to extract who's allocating, what they said, and who influences decisions—then delivers personalized alerts with exact quotes and relationship maps to your team within hours, not months.
+
+### **What strategies and asset classes do you cover?**
+
+**Full coverage:** Private Equity, Venture Capital, Private Credit, Real Estate, Infrastructure, Natural Resources, Hedge Funds (all strategies)
+
+**Allocation types we track:**
+
+* New commitments and re-ups  
+* Pacing changes and strategic shifts  
+* Manager graduations and emerging manager programs  
+* Consultant recommendations and searches  
+* Co-investment opportunities
+
+**Check your specific coverage:** Use our Coverage Validator to see exactly which LPs we track for your strategy → \[Check Coverage\]
+
+---
+
+## **Speed & Differentiation**
+
+### **Why is "real-time" better than comprehensive databases?**
+
+**Library vs. Radar:**
+
+* **Databases (Library):** Great for looking up last year's commitments  
+* **Osmosis (Radar):** Great for knowing who's committing next quarter
+
+**Real example:**
+
+* **Monday:** Oregon IC discusses increasing PE allocation  
+* **Monday afternoon:** Osmosis alert to relevant managers  
+* **Tuesday:** First movers scheduling calls  
+* **3 weeks later:** RFP released  
+* **6 weeks later:** Database updates show "considering PE increase"
+
+**The outcome shift:**
+
+* **Before:** Read about mandates → Chase RFPs → 5% hit rate  
+* **Now:** Hear signals → Call first → 20% hit rate
+
+### **We already have Preqin/PitchBook/eVestment—why add Osmosis?**
+
+**Keep them for what they're great at:**
+
+* Historical commitments and benchmarks  
+* Contact information and fund performance  
+* Quarterly reports and analysis
+
+**Add Osmosis for what they can't do:**
+
+* **Preqin** tells you who manages $10B → **Osmosis** tells you who's deploying $500M next quarter  
+* **PitchBook** shows you contact info → **Osmosis** shows you what that contact said yesterday  
+* **Dakota** lists consultant relationships → **Osmosis** alerts when consultants recommend your strategy
+
+**Stack fit:** Databases ≠ signals. Use both. Osmosis makes your databases more valuable by telling you who to look up and when to call.
+
+### **What if my competitors are already using Osmosis?**
+
+Speed matters, but execution matters more. Osmosis tells everyone the same facts—your differentiation is what you do with them.
+
+Plus, we see teams using Osmosis consistently outperform those who don't, even when both have access. Why? Because most firms still take weeks to act on intelligence. If you can move in days, you win.
+
+---
+
+## **Coverage & Sources**
+
+### **Where do signals come from?**
+
+**What we capture today:**
+
+* Public pension board and investment committee meetings (live \+ same-day video)  
+* CIO and staff interviews in public forums  
+* Consultant presentations at public sessions  
+* Public filings and documents tied to allocation decisions
+
+**Coverage scope:**
+
+* 360+ US public plans monitored continuously and increasing on a weekly basis  
+* 4,000+ meetings per year captured  
+* Any allocator speaking publicly worldwide (including endowments, foundations, SWFs when they publish)
+
+**What we never capture:**
+
+* Closed-door sessions  
+* Material non-public information (MNPI)  
+* Embargoed or privileged materials
+
+**Verifiable and traceable to the source:** Every insight links to its public source for verification.
+
+### **What about international, endowments, foundations, and family offices?**
+
+**Coming soon:** Comprehensive US public plan coverage \+ any allocator speaking publicly worldwide. 
+
+**Specifically:**
+
+* **Endowments/Foundations:** Captured when they publish meetings or speak at conferences  
+* **Sovereign Wealth:** Covered when they release reports or officials speak publicly  
+* **Family Offices:** Limited to public statements (rare but included when available)
+
+---
+
+## **Accuracy & Compliance**
+
+### **How do you ensure accuracy and prevent AI hallucinations?**
+
+**Simple answer:** Every alert includes references to the exact source. You can verify everything before reaching out. No hallucinations, just facts with receipts.
+
+**How we ensure quality:**
+
+* **Speaker attribution:** We know who said it (CIO vs consultant vs trustee)  
+* **Source links:** Click through to exact timestamp or document page  
+* **Confidence scoring:** We flag when we're uncertain  
+* **User verification:** "Report Issue" button with rapid review
+
+**Trust metric:** 99.7% attribution accuracy in latest audit
+
+### **Do you handle MNPI? How is customer data treated?**
+
+**No MNPI—ever.** We only process publicly available information.
+
+**Your data is yours:**
+
+* Customer watchlists and notes are ring-fenced  
+* Never shared between clients  
+* Not used to train models (unless you explicitly opt in)  
+* Full audit trail of who sees what
+
+**Compliance-ready:** Used by compliance teams at 15+ major funds. Zero compliance issues in 3 years of operation.
+
+---
+
+## **Implementation & Integration**
+
+### **How fast is onboarding?**
+
+**Under 2 minutes.** Accept invite → AI builds your watchlist → alerts start flowing.
+
+**Week 1 timeline:**
+
+* Minute 1-2: Setup complete  
+* Hour 1: First relevant alerts arrive  
+* Day 1: Team trained on signal interpretation  
+* Week 1: First meeting booked from signal  
+* Week 2-4: Measurable pipeline impact
+
+**No engineering required.** No IT tickets. No data migration. Just results.
+
+### **What integrations do you support?**
+
+**Instant (no setup):**
+
+* Email alerts with source links  
+* Web app with search and filters
+
+**(Coming soon) CRM Integration (1-hour setup):**
+
+* **Salesforce/HubSpot:** Push signals as custom objects, auto-create tasks, track as "Allocator-Sourced"  
+* **Other CRMs:** Weekly CSV export or webhook to middleware
+
+**What gets pushed:**
+
+* Allocator name and strategy interest  
+* Signal type (pacing change, new search, consultant rec)  
+* Exact quote with source link  
+* Suggested talk track  
+* Relationship map
+
+---
+
+## **ROI & Pricing**
+
+### **How do you justify the cost?**
+
+**The math is simple:**
+
+* Value of one mandate: \~$5M over 5 years  
+* ROI: 100× on one win, 1,000× if you win 10
+
+**What customers tell us:**
+
+* "Paid for itself in the first month"  
+* "One meeting covers the annual cost"  
+* "Should be 10× the price based on value"
+
+**Pricing model:** Scaled by team size, not AUM. Everyone from emerging managers to $100B platforms can access the same intelligence.
+
+### **What's your maturity model? How do I know if we'll succeed?**
+
+**Quick self-assessment:**
+
+**Level 1 \- Reactive (Industry norm):**
+
+* □ Learn about mandates from RFPs or news  
+* □ \~5% presentation hit rate  
+* □ 18-month fundraising cycles
+
+**Level 2 \- Aware:**
+
+* □ Manually check meeting minutes  
+* □ \~7-10% hit rate  
+* □ Some proactive outreach
+
+**Level 3 \- Proactive (Osmosis users after 30 days):**
+
+* □ Alerts drive daily priorities  
+* □ \~12-15% hit rate  
+* □ Faster qualification
+
+**Level 4 \- Predictive (Osmosis power users):**
+
+* □ Signals auto-route with talk tracks  
+* □ \~20%+ hit rate
+
+**If you're Level 1 or 2, Osmosis can 3× your speed to market.**
+
+---
+
+## **Competitive Intelligence**
+
+### **Can I see what my competitors are doing?**
+
+**Yes, when they present in public.** You'll see:
+
+* Who else presented at recent board meetings  
+* Which managers consultants are recommending  
+* What strategies are gaining/losing favor  
+* When competitors get mentioned in meetings
+
+**What you won't see:** Private interactions, closed-door discussions, or anything that wasn't said publicly
+
+**The edge:** You'll know the competitive landscape before the RFP drops, not after.
+
+---
+
+## **Proof & Validation**
+
+### **What proof can you share?**
+
+**Activity metrics:**
+
+* 4,000+ allocator meetings monitored yearly  
+* 360+ public plans tracked continuously  
+* 160+ opportunities surfaced monthly  
+* 47 signals generated this week alone
+
+**Customer proof:**
+
+"I've sourced two $100M+ opportunities from Osmosis in the past month." — Aaron, Relationship Manager, $30B Hedge Fund
+
+---
+
+## **Next Steps**
+
+### **What's next if we're interested?**
+
+**Three options:**
+
+1. **15-minute preview** — We'll show you today's signals for your strategy  
+2. **Free coverage check** — See exactly what we track for your focus areas
+
+**Get started:** See allocator moves from this week → \[View Live Signals\]
+
+**Questions?** We're confident in our ROI math. If you can't see the value in 15 minutes, we'll tell you ourselves.
+
+---
+
+## **Security & Compliance Addendum**
+
+**Security posture:**
+
+* Encryption in transit and at rest  
+* Role-based access control with SSO  
+* Full audit logging  
+* Annual penetration testing
+
+**Compliance framework:**
+
+* Public information only (no MNPI)  
+* Source verification for every signal  
+* Customer data segregation  
+* GDPR/CCPA compliant  
+* SEC marketing rule aligned
+
+**Documentation available:**
+
+* Security overview  
+* DPA execution  
+* Technical controls checklist  
+* Vendor assessment questionnaire
+
+---
+
+*Last updated: \[Current Date\] | Osmosis tracks public allocator intelligence only | Customer data never shared between firms*
+
