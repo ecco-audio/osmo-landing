@@ -11,7 +11,7 @@ export default function Navigation() {
           <div className="flex-1">
             <a href="/" className="flex items-center">
               <img
-                src="/img/Osmosis-logo-400.png"
+                src="/_image/Osmosis-logo-400.png"
                 alt="Osmosis"
                 width={140}
                 height={36}
