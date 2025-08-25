@@ -84,7 +84,7 @@ export default function PipelineSection({ pill, headline, steps }: PipelineProps
       <div style={{
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'url(/earth-night-bg.jpg)',
+        backgroundImage: 'url(/_image/earth-night-bg.jpg)',
         backgroundSize: '800px 800px',
         backgroundPosition: 'center 120px',
         backgroundRepeat: 'no-repeat',

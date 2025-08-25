@@ -260,7 +260,7 @@
 
   /* Reusable noise background */
   .bg-noise {
-    background-image: url('/img/osmosis-noise.jpg');
+    background-image: url('/_image/osmosis-noise.jpg');
   }
 
   /* Progress bar animations */
@@ -287,7 +287,7 @@
 /* Watchlists/Hub Overview Page Styles */
 @layer components {
   .hub-header-section {
-    background-image: url('/img/osmosis-noise.jpg');
+    background-image: url('/_image/osmosis-noise.jpg');
     background-size: cover;
     background-position: center;
     height: auto;
@@ -412,7 +412,7 @@
 
   /* ===================== Allocators Page Styles ===================== */
   .allocators-header-section {
-    background-image: url('/img/osmosis-noise.jpg');
+    background-image: url('/_image/osmosis-noise.jpg');
     background-size: cover;
     background-position: center;
     padding-top: 40px;
